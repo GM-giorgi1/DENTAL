@@ -1,0 +1,954 @@
+<div class="page-wrapper"><div class="global-styles"><div class="style-overrides w-embed"><style>
+
+/* Ensure all elements inherit the color from its parent */
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-nav-brand,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-slider-arrow-left,
+.w-slider-arrow-right,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #4d65ff;
+   outline-offset: 0.125rem;
+}
+
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+
+/* Prevent all click and hover interaction with an element */
+.pointer-events-off {
+	pointer-events: none;
+}
+
+/* Enables all click and hover interaction with an element */
+.pointer-events-on {
+  pointer-events: auto;
+}
+
+/* Create a class of .div-square which maintains a 1:1 dimension of a div */
+.div-square::after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+/* Make sure containers never lose their center alignment */
+.container-medium,.container-small, .container-large {
+	margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+/* Adds inline flex display */
+.display-inlineflex {
+  display: inline-flex;
+}
+
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+
+/* Remove default Webflow chevron from form select */
+select{
+  -webkit-appearance:none;
+}
+
+
+@media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+        display: none !important;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+}
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+}
+ 
+.margin-0 {
+  margin: 0rem !important;
+}
+  
+.padding-0 {
+  padding: 0rem !important;
+}
+
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+  
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+  
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+  
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+  
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+/* Apply "..." at 100% width */
+.truncate-width { 
+		width: 100%; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+/* Removes native scrollbar */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none; 
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+  .brand-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+</style></div><div class="color-schemes w-embed"><style>
+/* Color Schemes Controls*/
+<meta name="relume-color-schemes" content="false"/>
+
+  .color-scheme-1 {
+/*All sections should point to Color Scheme 1*/
+
+  }
+
+  .color-scheme-2 {
+    --color-scheme-1--text: var(--color-scheme-2--text);
+    --color-scheme-1--background: var(--color-scheme-2--background);
+    --color-scheme-1--foreground: var(--color-scheme-2--foreground);
+    --color-scheme-1--border: var(--color-scheme-2--border);
+    --color-scheme-1--accent: var(--color-scheme-2--accent);
+  }
+
+  .color-scheme-3 {
+    --color-scheme-1--text: var(--color-scheme-3--text);
+    --color-scheme-1--background: var(--color-scheme-3--background);
+    --color-scheme-1--foreground: var(--color-scheme-3--foreground);
+    --color-scheme-1--border: var(--color-scheme-3--border);
+    --color-scheme-1--accent: var(--color-scheme-3--accent);
+  }
+
+  .color-scheme-4 {
+    --color-scheme-1--text: var(--color-scheme-4--text);
+    --color-scheme-1--background: var(--color-scheme-4--background);
+    --color-scheme-1--foreground: var(--color-scheme-4--foreground);
+    --color-scheme-1--border: var(--color-scheme-4--border);
+    --color-scheme-1--accent: var(--color-scheme-4--accent);
+  }
+
+  .color-scheme-5 {
+    --color-scheme-1--text: var(--color-scheme-5--text);
+    --color-scheme-1--background: var(--color-scheme-5--background);
+    --color-scheme-1--foreground: var(--color-scheme-5--foreground);
+    --color-scheme-1--border: var(--color-scheme-5--border);
+    --color-scheme-1--accent: var(--color-scheme-5--accent);
+  }
+
+  .color-scheme-6 {
+    --color-scheme-1--text: var(--color-scheme-6--text);
+    --color-scheme-1--background: var(--color-scheme-6--background);
+    --color-scheme-1--foreground: var(--color-scheme-6--foreground);
+    --color-scheme-1--border: var(--color-scheme-6--border);
+    --color-scheme-1--accent: var(--color-scheme-6--accent);
+  }
+
+  .color-scheme-7 {
+    --color-scheme-1--text: var(--color-scheme-7--text);
+    --color-scheme-1--background: var(--color-scheme-7--background);
+    --color-scheme-1--foreground: var(--color-scheme-7--foreground);
+    --color-scheme-1--border: var(--color-scheme-7--border);
+    --color-scheme-1--accent: var(--color-scheme-7--accent);
+  }
+
+  .color-scheme-8 {
+    --color-scheme-1--text: var(--color-scheme-8--text);
+    --color-scheme-1--background: var(--color-scheme-8--background);
+    --color-scheme-1--foreground: var(--color-scheme-8--foreground);
+    --color-scheme-1--border: var(--color-scheme-8--border);
+    --color-scheme-1--accent: var(--color-scheme-8--accent);
+  }
+
+  .color-scheme-9 {
+    --color-scheme-1--text: var(--color-scheme-9--text);
+    --color-scheme-1--background: var(--color-scheme-9--background);
+    --color-scheme-1--foreground: var(--color-scheme-9--foreground);
+    --color-scheme-1--border: var(--color-scheme-9--border);
+    --color-scheme-1--accent: var(--color-scheme-9--accent);
+  }
+
+  .color-scheme-10 {
+    --color-scheme-1--text: var(--color-scheme-10--text);
+    --color-scheme-1--background: var(--color-scheme-10--background);
+    --color-scheme-1--foreground: var(--color-scheme-10--foreground);
+    --color-scheme-1--border: var(--color-scheme-10--border);
+    --color-scheme-1--accent: var(--color-scheme-10--accent);
+  }
+  
+/* Inherit slider dot colors */
+.w-slider-dot {
+  background-color: var(--color-scheme-1--text);
+  opacity: 0.20;
+}
+
+.w-slider-dot.w-active {
+  background-color: var(--color-scheme-1--text);
+  opacity: 1;
+}
+
+/* Override .w-slider-nav-invert styles */
+.w-slider-nav-invert .w-slider-dot {
+  background-color: var(--color-scheme-1--text) !important;
+  opacity: 0.20 !important;
+}
+
+.w-slider-nav-invert .w-slider-dot.w-active {
+  background-color: var(--color-scheme-1--text) !important;
+  opacity: 1 !important;
+}
+
+</style></div><div class="hide w-embed"><style>
+/* =========================================
+   1. The Engine (Base States)   ========================================= */
+[data-animate] {
+  opacity: 0;
+  will-change: opacity, transform, filter;
+}
+/* =========================================
+   2. The Active State (WF Designer View & Triggered by JS)   ========================================= */
+.wf-design-mode [data-animate], .w-editor [data-animate], [data-animate].is-visible {
+  opacity: 1;
+  transform: translate(0) scale(1) rotate(0);
+  filter: blur(0) grayscale(0);
+}
+/* =========================================
+   3. Animation Flavors   ========================================= */
+[data-animate="fade-up"].is-visible {animation: fadeUp 1s cubic-bezier(.25, 1, .5, 1) both;}
+[data-animate="fade-left"].is-visible {animation: fadeLeft 1s cubic-bezier(.25, 1, .5, 1) both;}
+[data-animate="fade-right"].is-visible {animation: fadeRight 1s cubic-bezier(.25, 1, .5, 1) both;}
+[data-animate="scale-up"].is-visible {animation: scaleUp 1s cubic-bezier(.25, 1, .5, 1) both;}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+    filter: blur(0px);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* =========================================
+   4. Utilities   ========================================= */
+/* Instant Reset for Replay Loops */
+[data-animate][data-animate-reset]:not(.is-visible) {
+  transition: none !important;
+  animation: none !important;
+}
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+</style></div><div class="hide w-embed w-script"><script>
+document.addEventListener("DOMContentLoaded",(()=>{const e={breakpoint:768,thresholds:{mobile:.1,desktop:.15},rootMargin:"0px 0px -50px 0px"};let t,a=window.innerWidth<e.breakpoint;function r(){const a=window.innerWidth<e.breakpoint?e.thresholds.mobile:e.thresholds.desktop,n={root:null,rootMargin:e.rootMargin,threshold:a};t&&t.disconnect(),t=new IntersectionObserver((e=>{e.forEach((e=>{const a=e.target;if("manual"===a.dataset.animateTrigger)return;e.isIntersecting?(a.hasAttribute("data-animate-stagger")?i(a):a.classList.add("is-visible"),a.hasAttribute("data-animate-reset")||t.unobserve(a)):a.hasAttribute("data-animate-reset")&&(a.classList.remove("is-visible"),a.hasAttribute("data-animate-stagger")&&o(a))}))}),n),s()}function s(){document.querySelectorAll('[data-animate]:not([data-animate-trigger="manual"])').forEach((e=>{e.closest("[data-animate-stagger]")&&!e.hasAttribute("data-animate-stagger")||t.observe(e)})),document.querySelectorAll("[data-animate-stagger]").forEach((e=>t.observe(e)))}function i(e){const t=parseInt(e.dataset.animateStagger)||100,a=parseInt(e.dataset.animateDelay)||0;e.classList.add("is-visible"),Array.from(e.children).filter((e=>e.hasAttribute("data-animate"))).forEach(((e,r)=>{const n=`${a+r*t}ms`;e.style.transitionDelay=n,e.style.animationDelay=n,e.classList.add("is-visible")}))}function o(e){Array.from(e.children).filter((e=>e.hasAttribute("data-animate"))).forEach((e=>{e.classList.remove("is-visible"),e.style.transitionDelay="",e.style.animationDelay=""}))}document.querySelectorAll("[data-animate-stagger][data-animate]").forEach((e=>{const t=e.dataset.animate;Array.from(e.children).forEach((e=>{e.hasAttribute("data-animate")||e.setAttribute("data-animate",t)}))})),document.querySelectorAll("[data-animate-delay]").forEach((e=>{if(!e.hasAttribute("data-animate-stagger")){const t=e.dataset.animateDelay;e.style.transitionDelay=`${t}ms`,e.style.animationDelay=`${t}ms`}})),function(){document.querySelectorAll("[data-animate-target]").forEach((e=>{e.addEventListener("click",(t=>{"A"===e.tagName&&e.getAttribute("href").startsWith("#")&&t.preventDefault();const a=e.dataset.animateTarget;document.querySelectorAll(a).forEach((e=>{e.classList.toggle("is-visible")}))}))}))}(),r();let n;window.addEventListener("resize",(()=>{clearTimeout(n),n=setTimeout((()=>{const e=window.innerWidth<768;e!==a&&(a=e,r())}),200)}))}));
+</script></div></div><div class="yt-css w-embed"><style>
+.wrapper {
+  max-width: 100%;
+}
+
+.youtube {
+  background-color: #000;
+  margin-bottom: 0;
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.youtube img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+
+.youtube .play-button {
+  width: 90px;
+  height: 60px;
+  background-color: #333;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  opacity: 0.8;
+  border-radius: 6px;
+}
+
+.youtube .play-button:before {
+  content: "";
+  border-style: solid;
+  border-width: 15px 0 15px 26px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.youtube img,
+.youtube iframe,
+.youtube .play-button,
+.youtube .play-button:before {
+  position: absolute;
+}
+
+.youtube .play-button,
+.youtube .play-button:before {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.youtube iframe {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+</style></div><div class="hide w-embed w-iframe w-script"><script>
+document.addEventListener("DOMContentLoaded", () => {
+  (function () {
+    var youtube = document.querySelectorAll(".youtube");
+
+    for (var i = 0; i < youtube.length; i++) {
+      var source =
+        "https://img.youtube.com/vi/" +
+        youtube[i].dataset.embed +
+        "/sddefault.jpg";
+
+      var image = new Image();
+      image.src = source;
+      image.loading = "lazy";
+      image.addEventListener(
+        "load",
+        (function () {
+          youtube[i].appendChild(image);
+        })(i)
+      );
+
+      youtube[i].addEventListener("click", function () {
+        var iframe = document.createElement("iframe");
+
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allowfullscreen", "");
+        iframe.setAttribute(
+          "src",
+          "https://www.youtube.com/embed/" +
+            this.dataset.embed +
+            "?rel=0&showinfo=0&autoplay=1"
+        );
+
+        this.innerHTML = "";
+        this.appendChild(iframe);
+      });
+    }
+  })();
+});
+</script></div><div data-wf--navbar--variant="base" class="navbar1_component"><div class="hide w-embed"><style>
+.navbar1_service-list {
+  grid-template-rows: 0fr;
+  row-gap: 0.5rem; /* <-- adds 0.5rem gap between rows */
+}
+
+.navbar1_service-list.is-open {
+  grid-template-rows: 1fr;
+  row-gap: 0.5rem; /* keep the same gap when open */
+}
+</style></div><div class="hide w-embed w-script"><script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const serviceDropdowns = document.querySelectorAll(".navbar1_service-dropdown");
+
+  serviceDropdowns.forEach(function (el) {
+    const dropdownToggle = el.querySelector(".navbar1_service-toggle");
+    const dropdownList = el.querySelector(".navbar1_service-list");
+    const dropdownChevron = el.querySelector(".navbar1_service-chevron");
+
+    dropdownToggle.addEventListener("click", function () {
+      const isOpen = dropdownList.classList.contains("is-open");
+
+      // Close all other dropdowns
+      serviceDropdowns.forEach(function (otherEl) {
+        otherEl.querySelector(".navbar1_service-list").classList.remove("is-open");
+        otherEl.querySelector(".navbar1_service-chevron").style.transform = "rotate(0deg)";
+      });
+
+      // Toggle the clicked one
+      if (!isOpen) {
+        dropdownList.classList.add("is-open");
+        dropdownChevron.style.transform = "rotate(180deg)";
+      } else {
+        dropdownList.classList.remove("is-open");
+        dropdownChevron.style.transform = "rotate(0deg)";
+      }
+    });
+  });
+});
+
+</script></div><div class="hide w-embed"><style>
+.navbar1_btn .button {
+  background-color: var(--_primitives---colors--chelsea-cucumber);
+  border-color: var(--_primitives---colors--chelsea-cucumber);
+}
+
+.navbar1_btn .button:hover {
+  background-color: var(--_primitives---colors--chelsea-cucumber-dark);
+  border-color: var(--_primitives---colors--chelsea-cucumber-dark);
+}
+
+@media screen and (width < 991px) {
+  .navbar1_dropdown-list .navbar1_dropdown-link:first-child {
+    padding-top: 1.5rem;
+  }
+
+  .navbar1_dropdown-list .navbar1_dropdown-link:last-child {
+    padding-bottom: 1.5rem;
+  }
+}
+.navbar1_menu.is-open { display: flex; }
+
+</style>
+
+</div><div class="navbar1_container"><a href="/" aria-label="Premier Arts Dental" aria-current="page" class="navbar1_logo-link w-inline-block w--current"><img class="navbar1_logo hide-tablet" src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af0d1224c4ddd4021cc9c_Link%20-%20Logo%20%E2%86%92%20Premier%20Arts%20Dental.webp" alt="Blue triangle with a tooth outline and green curved line, next to a green button labeled Quality Luxury Care." sizes="(max-width: 991px) 100vw, 663px" loading="eager" fetchpriority="high" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af0d1224c4ddd4021cc9c_Link%20-%20Logo%20%E2%86%92%20Premier%20Arts%20Dental-p-500.png 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af0d1224c4ddd4021cc9c_Link%20-%20Logo%20%E2%86%92%20Premier%20Arts%20Dental.webp 663w"/><img fetchpriority="high" loading="eager" alt="" src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac1c33a4ddeb2f1f2e3c63f_premier%20arts%20dental%20logo.webp" class="navbar1_logo hide-desktop"/></a><link rel="prerender" href="/"/><nav class="navbar1_menu"><ul role="list" class="navbar1_menu-links"><li class="navbar1_menu-link-item"><a href="/" aria-current="page" class="navbar6_link w--current">Home</a><link rel="prerender" href="/"/></li><li class="navbar1_menu-link-item"><div data-delay="200" data-hover="false" data-w-id="d26d584a-fa7a-26e7-2f74-d78febd4b29d" class="navbar11_menu-dropdown w-dropdown"><div class="navbar11_dropdown-toggle w-dropdown-toggle"><div class="navbar6_link">About Us</div><div class="dropdown-chevron w-embed"><svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"/>
+</svg></div></div><nav class="navbar11_dropdown-list w-dropdown-list"><div class="navbar11_dropdown-link-list"><a href="/about-us" class="navbar11_dropdown-link"><strong>About Us</strong></a><a href="/about-us/dr-prachi-shah" class="navbar11_dropdown-link">Dr. Prachi Shah</a></div></nav></div></li><li class="navbar1_menu-link-item"><div data-delay="200" data-hover="false" data-w-id="d26d584a-fa7a-26e7-2f74-d78febd4b2a9" class="navbar1_menu-dropdown w-dropdown"><div class="navbar1_dropdown-toggle w-dropdown-toggle"><div class="navbar6_link">Services</div><div class="dropdown-chevron w-embed"><svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"/>
+</svg></div></div><nav class="navbar1_dropdown-list is-service w-dropdown-list"><a href="/services" class="navbar1_dropdown-link w-dropdown-link"><strong>Services</strong></a><div class="navbar1_service-dropdown"><div class="navbar1_service-toggle"><div>Cosmetic Dentistry</div><div class="navbar1_service-chevron w-embed"><svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"/>
+</svg></div></div><div class="navbar1_service-list"><div class="navbar1_service-list-height"><div class="navbar1_service-list-inner"><a href="/services/cosmetic-dentistry" class="navbar_dropdown-link w-dropdown-link">Cosmetic Dentistry</a><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><a href="/services/cosmetic-dentistry/dental-bonding" class="navbar_dropdown-link w-dropdown-link">Dental Bonding</a></div><div role="listitem" class="w-dyn-item"><a href="/services/cosmetic-dentistry/icon-resin" class="navbar_dropdown-link w-dropdown-link">Icon Resin Treatments</a></div><div role="listitem" class="w-dyn-item"><a href="/services/cosmetic-dentistry/smile-makeovers" class="navbar_dropdown-link w-dropdown-link">Smile Makeovers</a></div><div role="listitem" class="w-dyn-item"><a href="/services/cosmetic-dentistry/veneers" class="navbar_dropdown-link w-dropdown-link">Veneers</a></div><div role="listitem" class="w-dyn-item"><a href="/services/cosmetic-dentistry/whitening-trays" class="navbar_dropdown-link w-dropdown-link">Take-Home Whitening Trays</a></div><div role="listitem" class="w-dyn-item"><a href="/services/cosmetic-dentistry/zoom-teeth-whitening" class="navbar_dropdown-link w-dropdown-link">Teeth Whitening with Zoom</a></div></div></div></div></div></div></div><div class="navbar1_service-dropdown"><div class="navbar1_service-toggle"><div>Endodontic Treatments</div><div class="navbar1_service-chevron w-embed"><svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"/>
+</svg></div></div><div class="navbar1_service-list"><div class="navbar1_service-list-height"><div class="navbar1_service-list-inner"><a href="/services/endodontics" class="navbar_dropdown-link w-dropdown-link">Endodontic Treatments</a><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><a href="/services/endodontics/post-and-core" class="navbar_dropdown-link w-dropdown-link">Post &amp; Core</a></div><div role="listitem" class="w-dyn-item"><a href="/services/endodontics/root-canal-therapy" class="navbar_dropdown-link w-dropdown-link">Root Canal Therapy</a></div><div role="listitem" class="w-dyn-item"><a href="/services/endodontics/traumatic-injuries" class="navbar_dropdown-link w-dropdown-link">Traumatic Dental Injuries</a></div><div role="listitem" class="w-dyn-item"><a href="/services/endodontics/vital-pulp-therapy" class="navbar_dropdown-link w-dropdown-link">Vital Pulp Therapy &amp; Pulpotomy</a></div></div></div></div></div></div></div><div class="navbar1_service-dropdown"><div class="navbar1_service-toggle"><div>General &amp; Preventive Dentistry</div><div class="navbar1_service-chevron w-embed"><svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"/>
+</svg></div></div><div class="navbar1_service-list"><div class="navbar1_service-list-height"><div class="navbar1_service-list-inner"><a href="/services/general-preventive" class="navbar_dropdown-link w-dropdown-link">General &amp; Preventive Dentistry</a><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><a href="/services/general-preventive/dental-cleanings" class="navbar_dropdown-link w-dropdown-link">Cleanings &amp; Exams</a></div><div role="listitem" class="w-dyn-item"><a href="/services/general-preventive/emergency-dentistry" class="navbar_dropdown-link w-dropdown-link">Dental Emergencies</a></div><div role="listitem" class="w-dyn-item"><a href="/services/general-preventive/fillings" class="navbar_dropdown-link w-dropdown-link">Dental Fillings</a></div><div role="listitem" class="w-dyn-item"><a href="/services/general-preventive/occlusal-night-guards" class="navbar_dropdown-link w-dropdown-link">Night Guards &amp; Mouthguards</a></div><div role="listitem" class="w-dyn-item"><a href="/services/general-preventive/oral-cancer-screenings" class="navbar_dropdown-link w-dropdown-link">Oral Cancer Screening</a></div><div role="listitem" class="w-dyn-item"><a href="/services/general-preventive/pediatric-dentistry" class="navbar_dropdown-link w-dropdown-link">Children&#x27;s &amp; Pediatric Dentistry</a></div><div role="listitem" class="w-dyn-item"><a href="/services/general-preventive/tooth-extractions" class="navbar_dropdown-link w-dropdown-link">Oral Surgery &amp; Extractions</a></div></div></div></div></div></div></div><div class="navbar1_service-dropdown"><div class="navbar1_service-toggle"><div>Orthodontic Treatment</div><div class="navbar1_service-chevron w-embed"><svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"/>
+</svg></div></div><div class="navbar1_service-list"><div class="navbar1_service-list-height"><div class="navbar1_service-list-inner"><a href="/services/orthodontics" class="navbar_dropdown-link w-dropdown-link">Orthodontic Treatment</a><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><a href="/services/orthodontics/invisalign" class="navbar_dropdown-link w-dropdown-link">Invisalign</a></div><div role="listitem" class="w-dyn-item"><a href="/services/orthodontics/invisalign-faq" class="navbar_dropdown-link w-dropdown-link">Invisalign FAQ</a></div><div role="listitem" class="w-dyn-item"><a href="/services/orthodontics/invisalign-for-teens" class="navbar_dropdown-link w-dropdown-link">Invisalign for Teens</a></div></div></div></div></div></div></div><div class="navbar1_service-dropdown"><div class="navbar1_service-toggle"><div>Restorative &amp; Prosthodontic Dentistry</div><div class="navbar1_service-chevron w-embed"><svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"/>
+</svg></div></div><div class="navbar1_service-list"><div class="navbar1_service-list-height"><div class="navbar1_service-list-inner"><a href="/services/restorative" class="navbar_dropdown-link w-dropdown-link">Restorative &amp; Prosthodontic Dentistry</a><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><a href="/services/restorative/all-on-six" class="navbar_dropdown-link w-dropdown-link">All-on-6 Dental Implants</a></div><div role="listitem" class="w-dyn-item"><a href="/services/restorative/dental-bridges" class="navbar_dropdown-link w-dropdown-link">Dental Bridges</a></div><div role="listitem" class="w-dyn-item"><a href="/services/restorative/dental-crowns" class="navbar_dropdown-link w-dropdown-link">Dental Crowns</a></div><div role="listitem" class="w-dyn-item"><a href="/services/restorative/dental-implants" class="navbar_dropdown-link w-dropdown-link">Dental Implants</a></div><div role="listitem" class="w-dyn-item"><a href="/services/restorative/flippers-partials" class="navbar_dropdown-link w-dropdown-link">Flippers &amp; Removable Partial Dentures</a></div><div role="listitem" class="w-dyn-item"><a href="/services/restorative/full-partial-dentures" class="navbar_dropdown-link w-dropdown-link">Dentures &amp; Partials</a></div><div role="listitem" class="w-dyn-item"><a href="/services/restorative/implant-dentures" class="navbar_dropdown-link w-dropdown-link">Implant-Retained Dentures</a></div><div role="listitem" class="w-dyn-item"><a href="/services/restorative/implant-partials" class="navbar_dropdown-link w-dropdown-link">Implant-Retained Partials</a></div><div role="listitem" class="w-dyn-item"><a href="/services/restorative/implant-restoration" class="navbar_dropdown-link w-dropdown-link">Implant Restoration</a></div><div role="listitem" class="w-dyn-item"><a href="/services/restorative/inlays-onlays" class="navbar_dropdown-link w-dropdown-link">Inlays &amp; Onlays</a></div><div role="listitem" class="w-dyn-item"><a href="/services/restorative/single-tooth-replacement" class="navbar_dropdown-link w-dropdown-link">Single Tooth Replacement</a></div></div></div></div></div></div></div></nav></div></li><li class="navbar1_menu-link-item"><div data-delay="200" data-hover="false" data-w-id="d26d584a-fa7a-26e7-2f74-d78febd4b2e3" class="navbar11_menu-dropdown w-dropdown"><div class="navbar11_dropdown-toggle w-dropdown-toggle"><div class="navbar6_link">Patient Info</div><div class="dropdown-chevron w-embed"><svg width=" 100%" height=" 100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"/>
+</svg></div></div><nav class="navbar11_dropdown-list w-dropdown-list"><div class="navbar11_dropdown-link-list"><a href="/patient-information" class="navbar11_dropdown-link"><strong>Patient Information</strong></a><a href="/patient-information/insurance-financing" class="navbar11_dropdown-link">Insurance &amp; Financing</a></div></nav></div></li><li class="navbar1_menu-link-item"><a href="/contact-us" class="navbar6_link">Contact</a><link rel="prerender" href="/contact-us"/></li><li class="navbar1_menu-link-item desktop-hidden"><div class="navbar1_menu-buttons"><div><a href="/contact-us" class="button is-icon is-small w-inline-block"><div>Book Appointment</div></a></div></div></li></ul></nav><div class="navbar1_btn-wrap hide-tablet"><div class="navbar1_btn"><div><a href="https://dental4.me/premierartsdental/1" target="_blank" class="button is-icon is-nav w-inline-block"><div>Book Appointment</div></a></div></div></div><button data-w-id="d26d584a-fa7a-26e7-2f74-d78febd4b305" class="navbar1_menu-button"><div class="menu-icon1"><div class="menu-icon1_line-top"></div><div class="menu-icon1_line-middle"><div class="menu-icon1_line-middle-inner"></div></div><div class="menu-icon1_line-bottom"></div></div></button></div></div><main class="main-wrapper"><header class="section_header76"><div class="w-layout-grid header76_component"><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabac3-d5dabac1" class="header76_content-left z-index-2"><div class="margin-bottom margin-small"><h1 class="heading-style-h1">Advanced dentistry <em>meets</em> genuine warmth.</h1></div><div class="text-rich-text text-color-white-85 w-richtext"><p>Where advanced dentistry meets genuine warmth. Led by Dr. Prachi Shah, DMD— accepting new patients, 12+ insurances accepted, evening hours Monday and Thursday until 7:00PM.</p></div><div class="margin-top margin-medium"><div class="button-group"><a href="https://dental4.me/premierartsdental/1" target="_blank" class="button is-icon w-inline-block"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M5.33333 4.66667V2M10.6667 4.66667V2M4.66667 7.33333H11.3333M3.33333 14H12.6667C13.0203 14 13.3594 13.8595 13.6095 13.6095C13.8595 13.3594 14 13.0203 14 12.6667V4.66667C14 4.31304 13.8595 3.97391 13.6095 3.72386C13.3594 3.47381 13.0203 3.33333 12.6667 3.33333H3.33333C2.97971 3.33333 2.64057 3.47381 2.39052 3.72386C2.14048 3.97391 2 4.31304 2 4.66667V12.6667C2 13.0203 2.14048 13.3594 2.39052 13.6095C2.64057 13.8595 2.97971 14 3.33333 14Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div><div>Book Appointment</div></a><a href="tel:(732)702-2787" class="button is-secondary is-alternate w-button">Call Us — (732) 702-2787</a></div></div><div class="margin-top margin-medium"><div class="header76_grid"><div class="heeader76_card"><div class="icon-embed-medium w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 36 38" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<rect y="2" width="36" height="36" rx="12" fill="currentColor" fill-opacity="0.15"/>
+<path d="M18 25.528C19.0989 24.5422 20.5237 23.998 22 24C22.6812 23.9993 23.3576 24.1147 24 24.3413V14.8413C23.3747 14.62 22.7013 14.5 22 14.5C20.5237 14.4979 19.0989 15.0422 18 16.028C16.9011 15.0422 15.4763 14.498 14 14.5C13.2987 14.5 12.6253 14.62 12 14.8413V24.3413C12.6424 24.1147 13.3188 23.9993 14 24C15.5367 24 16.9387 24.578 18 25.528ZM18 16.028V25.528" stroke="currentColor" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div><div class="header76_text-wrapper"><div class="text-size-regular font-style-heading">Patient Education</div><div class="text-size-regular text-color-white-70">Tips on oral health, treatment guides &amp; answers.</div><div class="button-group"><a href="/blog" class="button is-link is-icon is-alternate w-inline-block"><div>Read Blog</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M6.75 9.75L10.5 6L6.75 2.25M10.5 6H1.5" stroke="currentColor" stroke-opacity="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a><link rel="prerender" href="/blog"/></div></div></div><div class="heeader76_card"><div class="icon-embed-medium w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 36 38" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<rect y="2" width="36" height="36" rx="12" fill="currentColor" fill-opacity="0.15"/>
+<path d="M17.3661 13.9512C17.5661 13.3372 18.4347 13.3372 18.6341 13.9512L19.6467 17.0672C19.6903 17.2009 19.775 17.3173 19.8888 17.4C20.0025 17.4826 20.1395 17.5271 20.2801 17.5272H23.5567C24.2027 17.5272 24.4707 18.3539 23.9487 18.7339L21.2981 20.6592C21.1842 20.742 21.0995 20.8587 21.056 20.9926C21.0125 21.1265 21.0125 21.2707 21.0561 21.4046L22.0681 24.5206C22.2681 25.1352 21.5647 25.6459 21.0427 25.2659L18.3921 23.3406C18.2781 23.2577 18.1409 23.2131 18.0001 23.2131C17.8592 23.2131 17.722 23.2577 17.6081 23.3406L14.9574 25.2659C14.4354 25.6459 13.7321 25.1346 13.9321 24.5206L14.9441 21.4046C14.9876 21.2707 14.9876 21.1265 14.9441 20.9926C14.9007 20.8587 14.8159 20.742 14.7021 20.6592L12.0514 18.7339C11.5287 18.3539 11.7981 17.5272 12.4434 17.5272H15.7194C15.8601 17.5273 15.9972 17.4828 16.1111 17.4002C16.225 17.3175 16.3098 17.201 16.3534 17.0672L17.3661 13.9512Z" stroke="currentColor" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div><div class="header76_text-wrapper"><div class="text-size-regular font-style-heading">Patient Reviews</div><div class="header76_ratings-wrapper"><div class="header76_ratings-wrap"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M5.42958 1.75625C5.60958 1.20365 6.39138 1.20365 6.57078 1.75625L7.21278 3.73145C7.252 3.85174 7.32825 3.95655 7.43062 4.03091C7.533 4.10526 7.65625 4.14535 7.78278 4.14545H9.85998C10.4414 4.14545 10.6826 4.88945 10.2128 5.23145L8.53278 6.45185C8.4302 6.52626 8.35381 6.63125 8.31458 6.75176C8.27535 6.87226 8.27528 7.0021 8.31438 7.12265L8.95638 9.09785C9.13638 9.65045 8.50338 10.1106 8.03238 9.76865L6.35238 8.54825C6.2499 8.47385 6.12652 8.43378 5.99988 8.43378C5.87324 8.43378 5.74986 8.47385 5.64738 8.54825L3.96738 9.76865C3.49698 10.1106 2.86458 9.65045 3.04398 9.09785L3.68598 7.12265C3.72508 7.0021 3.72501 6.87226 3.68578 6.75176C3.64655 6.63125 3.57016 6.52626 3.46758 6.45185L1.78818 5.23205C1.31838 4.89005 1.56018 4.14605 2.14098 4.14605H4.21758C4.34421 4.14608 4.4676 4.10605 4.57009 4.03169C4.67259 3.95732 4.74893 3.85244 4.78818 3.73205L5.43018 1.75685L5.42958 1.75625Z" fill="#FFD230"/>
+</svg></div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M5.42958 1.75625C5.60958 1.20365 6.39138 1.20365 6.57078 1.75625L7.21278 3.73145C7.252 3.85174 7.32825 3.95655 7.43062 4.03091C7.533 4.10526 7.65625 4.14535 7.78278 4.14545H9.85998C10.4414 4.14545 10.6826 4.88945 10.2128 5.23145L8.53278 6.45185C8.4302 6.52626 8.35381 6.63125 8.31458 6.75176C8.27535 6.87226 8.27528 7.0021 8.31438 7.12265L8.95638 9.09785C9.13638 9.65045 8.50338 10.1106 8.03238 9.76865L6.35238 8.54825C6.2499 8.47385 6.12652 8.43378 5.99988 8.43378C5.87324 8.43378 5.74986 8.47385 5.64738 8.54825L3.96738 9.76865C3.49698 10.1106 2.86458 9.65045 3.04398 9.09785L3.68598 7.12265C3.72508 7.0021 3.72501 6.87226 3.68578 6.75176C3.64655 6.63125 3.57016 6.52626 3.46758 6.45185L1.78818 5.23205C1.31838 4.89005 1.56018 4.14605 2.14098 4.14605H4.21758C4.34421 4.14608 4.4676 4.10605 4.57009 4.03169C4.67259 3.95732 4.74893 3.85244 4.78818 3.73205L5.43018 1.75685L5.42958 1.75625Z" fill="#FFD230"/>
+</svg></div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M5.42958 1.75625C5.60958 1.20365 6.39138 1.20365 6.57078 1.75625L7.21278 3.73145C7.252 3.85174 7.32825 3.95655 7.43062 4.03091C7.533 4.10526 7.65625 4.14535 7.78278 4.14545H9.85998C10.4414 4.14545 10.6826 4.88945 10.2128 5.23145L8.53278 6.45185C8.4302 6.52626 8.35381 6.63125 8.31458 6.75176C8.27535 6.87226 8.27528 7.0021 8.31438 7.12265L8.95638 9.09785C9.13638 9.65045 8.50338 10.1106 8.03238 9.76865L6.35238 8.54825C6.2499 8.47385 6.12652 8.43378 5.99988 8.43378C5.87324 8.43378 5.74986 8.47385 5.64738 8.54825L3.96738 9.76865C3.49698 10.1106 2.86458 9.65045 3.04398 9.09785L3.68598 7.12265C3.72508 7.0021 3.72501 6.87226 3.68578 6.75176C3.64655 6.63125 3.57016 6.52626 3.46758 6.45185L1.78818 5.23205C1.31838 4.89005 1.56018 4.14605 2.14098 4.14605H4.21758C4.34421 4.14608 4.4676 4.10605 4.57009 4.03169C4.67259 3.95732 4.74893 3.85244 4.78818 3.73205L5.43018 1.75685L5.42958 1.75625Z" fill="#FFD230"/>
+</svg></div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M5.42958 1.75625C5.60958 1.20365 6.39138 1.20365 6.57078 1.75625L7.21278 3.73145C7.252 3.85174 7.32825 3.95655 7.43062 4.03091C7.533 4.10526 7.65625 4.14535 7.78278 4.14545H9.85998C10.4414 4.14545 10.6826 4.88945 10.2128 5.23145L8.53278 6.45185C8.4302 6.52626 8.35381 6.63125 8.31458 6.75176C8.27535 6.87226 8.27528 7.0021 8.31438 7.12265L8.95638 9.09785C9.13638 9.65045 8.50338 10.1106 8.03238 9.76865L6.35238 8.54825C6.2499 8.47385 6.12652 8.43378 5.99988 8.43378C5.87324 8.43378 5.74986 8.47385 5.64738 8.54825L3.96738 9.76865C3.49698 10.1106 2.86458 9.65045 3.04398 9.09785L3.68598 7.12265C3.72508 7.0021 3.72501 6.87226 3.68578 6.75176C3.64655 6.63125 3.57016 6.52626 3.46758 6.45185L1.78818 5.23205C1.31838 4.89005 1.56018 4.14605 2.14098 4.14605H4.21758C4.34421 4.14608 4.4676 4.10605 4.57009 4.03169C4.67259 3.95732 4.74893 3.85244 4.78818 3.73205L5.43018 1.75685L5.42958 1.75625Z" fill="#FFD230"/>
+</svg></div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M5.42958 1.75625C5.60958 1.20365 6.39138 1.20365 6.57078 1.75625L7.21278 3.73145C7.252 3.85174 7.32825 3.95655 7.43062 4.03091C7.533 4.10526 7.65625 4.14535 7.78278 4.14545H9.85998C10.4414 4.14545 10.6826 4.88945 10.2128 5.23145L8.53278 6.45185C8.4302 6.52626 8.35381 6.63125 8.31458 6.75176C8.27535 6.87226 8.27528 7.0021 8.31438 7.12265L8.95638 9.09785C9.13638 9.65045 8.50338 10.1106 8.03238 9.76865L6.35238 8.54825C6.2499 8.47385 6.12652 8.43378 5.99988 8.43378C5.87324 8.43378 5.74986 8.47385 5.64738 8.54825L3.96738 9.76865C3.49698 10.1106 2.86458 9.65045 3.04398 9.09785L3.68598 7.12265C3.72508 7.0021 3.72501 6.87226 3.68578 6.75176C3.64655 6.63125 3.57016 6.52626 3.46758 6.45185L1.78818 5.23205C1.31838 4.89005 1.56018 4.14605 2.14098 4.14605H4.21758C4.34421 4.14608 4.4676 4.10605 4.57009 4.03169C4.67259 3.95732 4.74893 3.85244 4.78818 3.73205L5.43018 1.75685L5.42958 1.75625Z" fill="#FFD230"/>
+</svg></div></div><div><div>4.9</div></div></div><div class="text-size-regular text-color-white-70">Trusted by Freehold families</div><div class="button-group"><a href="https://www.google.com/maps/place/Premier+Arts+Dental/@40.284401,-74.2956273,15z/data=!3m1!5s0x89c3d3f661874ab1:0x2705449fc1888cd6!4m18!1m9!3m8!1s0x89c3d3e51ca63981:0x1d61fab011fa7b1b!2sPremier+Arts+Dental!8m2!3d40.284401!4d-74.2956273!9m1!1b1!16s%2Fg%2F11fs2n90qm!3m7!1s0x89c3d3e51ca63981:0x1d61fab011fa7b1b!8m2!3d40.284401!4d-74.2956273!9m1!1b1!16s%2Fg%2F11fs2n90qm?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="button is-link is-icon is-alternate w-inline-block"><div>See Reviews</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M6.75 9.75L10.5 6L6.75 2.25M10.5 6H1.5" stroke="currentColor" stroke-opacity="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a><link rel="prerender" href="https://www.google.com/maps/place/Premier+Arts+Dental/@40.284401,-74.2956273,15z/data=!3m1!5s0x89c3d3f661874ab1:0x2705449fc1888cd6!4m18!1m9!3m8!1s0x89c3d3e51ca63981:0x1d61fab011fa7b1b!2sPremier+Arts+Dental!8m2!3d40.284401!4d-74.2956273!9m1!1b1!16s%2Fg%2F11fs2n90qm!3m7!1s0x89c3d3e51ca63981:0x1d61fab011fa7b1b!8m2!3d40.284401!4d-74.2956273!9m1!1b1!16s%2Fg%2F11fs2n90qm?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D"/></div></div></div></div></div></div><div class="header76_content-right z-index-2 hide-mobile-landscape"><div class="header76_images-layout"><div class="header76_image-list-left"><div class="header76_image-list"><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabad9-d5dabac1" class="header76_image-wrapper"><img id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabada-d5dabac1" sizes="100vw" alt="Receptionist smiling at a woman standing at the Premier Arts Dental front desk." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af1fab3f5d134880aa9d9_6f636b0fd07f7261320e91644ed906d1b8b21ca9.webp" loading="lazy" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af1fab3f5d134880aa9d9_6f636b0fd07f7261320e91644ed906d1b8b21ca9-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af1fab3f5d134880aa9d9_6f636b0fd07f7261320e91644ed906d1b8b21ca9-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af1fab3f5d134880aa9d9_6f636b0fd07f7261320e91644ed906d1b8b21ca9-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af1fab3f5d134880aa9d9_6f636b0fd07f7261320e91644ed906d1b8b21ca9.webp 1264w" class="header76_image"/></div><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabadb-d5dabac1" class="header76_image-wrapper"><img sizes="100vw" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2166595156bd522bfd3_17ba8d99b719822d1df3ae7a82377252dd778de2-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2166595156bd522bfd3_17ba8d99b719822d1df3ae7a82377252dd778de2-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2166595156bd522bfd3_17ba8d99b719822d1df3ae7a82377252dd778de2.webp 842w" alt="Modern dental exam room with dental chair, overhead light, monitors, and dental equipment." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2166595156bd522bfd3_17ba8d99b719822d1df3ae7a82377252dd778de2.webp" loading="lazy" class="header76_image"/></div><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabadd-d5dabac1" class="header76_image-wrapper"><img id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabade-d5dabac1" sizes="(max-width: 767px) 100vw, (max-width: 991px) 49vw, (max-width: 3240px) 50vw, 1620px" alt="" src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac65803aef58874bc68acb7_Branding%20Photos%20-%20Premier%20Arts%20Dental%2022.webp" loading="lazy" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac65803aef58874bc68acb7_Branding%20Photos%20-%20Premier%20Arts%20Dental%2022-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac65803aef58874bc68acb7_Branding%20Photos%20-%20Premier%20Arts%20Dental%2022-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac65803aef58874bc68acb7_Branding%20Photos%20-%20Premier%20Arts%20Dental%2022-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac65803aef58874bc68acb7_Branding%20Photos%20-%20Premier%20Arts%20Dental%2022-p-1600.webp 1600w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac65803aef58874bc68acb7_Branding%20Photos%20-%20Premier%20Arts%20Dental%2022.webp 1620w" class="header76_image"/></div></div><div class="header76_image-list"><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabae0-d5dabac1" class="header76_image-wrapper"><img id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabae1-d5dabac1" sizes="100vw" alt="Receptionist smiling at a woman standing at the Premier Arts Dental front desk." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af1fab3f5d134880aa9d9_6f636b0fd07f7261320e91644ed906d1b8b21ca9.webp" loading="lazy" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af1fab3f5d134880aa9d9_6f636b0fd07f7261320e91644ed906d1b8b21ca9-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af1fab3f5d134880aa9d9_6f636b0fd07f7261320e91644ed906d1b8b21ca9-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af1fab3f5d134880aa9d9_6f636b0fd07f7261320e91644ed906d1b8b21ca9-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af1fab3f5d134880aa9d9_6f636b0fd07f7261320e91644ed906d1b8b21ca9.webp 1264w" class="header76_image"/></div><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabae2-d5dabac1" class="header76_image-wrapper"><img sizes="100vw" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2166595156bd522bfd3_17ba8d99b719822d1df3ae7a82377252dd778de2-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2166595156bd522bfd3_17ba8d99b719822d1df3ae7a82377252dd778de2-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2166595156bd522bfd3_17ba8d99b719822d1df3ae7a82377252dd778de2.webp 842w" alt="Modern dental exam room with dental chair, overhead light, monitors, and dental equipment." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2166595156bd522bfd3_17ba8d99b719822d1df3ae7a82377252dd778de2.webp" loading="lazy" class="header76_image"/></div><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabae4-d5dabac1" class="header76_image-wrapper"><img id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabae5-d5dabac1" sizes="100vw" alt="Dentist in blue gloves and mask working on a patient&#x27;s teeth in a dental office." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af22705ae36372215f31a_4c4bdbd6959e896fa21e2105524b0be77c1c3042.webp" loading="lazy" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af22705ae36372215f31a_4c4bdbd6959e896fa21e2105524b0be77c1c3042-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af22705ae36372215f31a_4c4bdbd6959e896fa21e2105524b0be77c1c3042-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af22705ae36372215f31a_4c4bdbd6959e896fa21e2105524b0be77c1c3042.webp 944w" class="header76_image"/></div></div></div><div class="header76_image-list-right"><div class="header76_image-list"><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabae8-d5dabac1" class="header76_image-wrapper"><img id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabae9-d5dabac1" sizes="100vw" alt="Reception area of Premier Arts Dental with a modern desk and teal chairs." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2599c885ef8bb24526c_0dc7ff84eb871f834f3f039696b6855b53b79ee0.webp" loading="lazy" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2599c885ef8bb24526c_0dc7ff84eb871f834f3f039696b6855b53b79ee0-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2599c885ef8bb24526c_0dc7ff84eb871f834f3f039696b6855b53b79ee0-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2599c885ef8bb24526c_0dc7ff84eb871f834f3f039696b6855b53b79ee0-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2599c885ef8bb24526c_0dc7ff84eb871f834f3f039696b6855b53b79ee0.webp 1264w" class="header76_image"/></div><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabaea-d5dabac1" class="header76_image-wrapper"><img id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabaeb-d5dabac1" sizes="(max-width: 767px) 100vw, 49vw" alt="" src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac65806699e871a21ec65dc_Doctor%20Photos%20-%20Premier%20Arts%20Dental%2005.webp" loading="lazy" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac65806699e871a21ec65dc_Doctor%20Photos%20-%20Premier%20Arts%20Dental%2005-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac65806699e871a21ec65dc_Doctor%20Photos%20-%20Premier%20Arts%20Dental%2005.webp 720w" class="header76_image"/></div><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabaec-d5dabac1" class="header76_image-wrapper"><img id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabaed-d5dabac1" sizes="100vw" alt="Curved corridor with beige walls and flooring, recessed lights, modern desks, and blue accent walls." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af281e2180b15853172d9_d38f2cfb36856c9a05d709a3eaa8aac210050287.webp" loading="lazy" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af281e2180b15853172d9_d38f2cfb36856c9a05d709a3eaa8aac210050287-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af281e2180b15853172d9_d38f2cfb36856c9a05d709a3eaa8aac210050287.webp 842w" class="header76_image"/></div></div><div class="header76_image-list"><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabaef-d5dabac1" class="header76_image-wrapper"><img id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabaf0-d5dabac1" sizes="100vw" alt="Reception area of Premier Arts Dental with a modern desk and teal chairs." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2599c885ef8bb24526c_0dc7ff84eb871f834f3f039696b6855b53b79ee0.webp" loading="lazy" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2599c885ef8bb24526c_0dc7ff84eb871f834f3f039696b6855b53b79ee0-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2599c885ef8bb24526c_0dc7ff84eb871f834f3f039696b6855b53b79ee0-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2599c885ef8bb24526c_0dc7ff84eb871f834f3f039696b6855b53b79ee0-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af2599c885ef8bb24526c_0dc7ff84eb871f834f3f039696b6855b53b79ee0.webp 1264w" class="header76_image"/></div><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabaf1-d5dabac1" class="header76_image-wrapper"><img id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabaf2-d5dabac1" sizes="100vw" alt="Smiling woman with long dark hair stands in a dental office with dental chair and equipment behind her." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af26a9bea26162a618923_bf024153c9607b93c6214c0158c88868268db17b.webp" loading="lazy" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af26a9bea26162a618923_bf024153c9607b93c6214c0158c88868268db17b-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af26a9bea26162a618923_bf024153c9607b93c6214c0158c88868268db17b-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af26a9bea26162a618923_bf024153c9607b93c6214c0158c88868268db17b.webp 848w" class="header76_image"/></div><div id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabaf3-d5dabac1" class="header76_image-wrapper"><img id="w-node-f3e17d8a-0895-e3b9-5cc0-03d7d5dabaf4-d5dabac1" sizes="100vw" alt="Curved corridor with beige walls and flooring, recessed lights, modern desks, and blue accent walls." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af281e2180b15853172d9_d38f2cfb36856c9a05d709a3eaa8aac210050287.webp" loading="lazy" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af281e2180b15853172d9_d38f2cfb36856c9a05d709a3eaa8aac210050287-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2af281e2180b15853172d9_d38f2cfb36856c9a05d709a3eaa8aac210050287.webp 842w" class="header76_image"/></div></div></div></div></div></div><div class="header76_background-video w-embed"><video
+  class="brand-video"
+  autoplay
+  loop
+  muted
+  playsinline
+  src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c%2F6a2b283b2dc4436259a050b1_AdobeStock_369817497_mp4.mp4"
+></video></div><div class="hide w-embed w-script"><style>
+.header76_image-list {
+  animation: scrollUp 25s linear infinite;
+}
+
+.header76_image-list-right .header76_image-list {
+  animation: scrollDown 25s linear infinite;
+}
+
+@keyframes scrollUp {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+  0%   { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+</style>
+
+<script>
+document.querySelectorAll('.header76_image-list').forEach(function(list) {
+  list.innerHTML += list.innerHTML;
+});
+</script></div><div class="hide w-embed"><style>
+  @media (prefers-reduced-motion: reduce) {
+  .header76_content-left > * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* Animate all elements inside the container */
+.header76_content-left > * {
+  opacity: 0;
+  animation: headerFadeUp 1s forwards;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Stagger animation */
+.header76_content-left > *:nth-child(1) { animation-delay: 0.15s; }
+.header76_content-left > *:nth-child(2) { animation-delay: 0.30s; }
+.header76_content-left > *:nth-child(3) { animation-delay: 0.45s; }
+.header76_content-left > *:nth-child(4) { animation-delay: 0.60s; }
+.header76_content-left > *:nth-child(5) { animation-delay: 0.75s; }
+.header76_content-left > *:nth-child(6) { animation-delay: 0.90s; }
+.header76_content-left > *:nth-child(7) { animation-delay: 1.05s; }
+.header76_content-left > *:nth-child(8) { animation-delay: 1.20s; }
+
+@keyframes headerFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style></div></header><header class="section_header147"><div class="header147_component"><div class="header147_video w-embed"><video
+  class="brand-video"
+  autoplay
+  loop
+  muted
+  playsinline
+  src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c%2F6aca577e9a23a5d4fc1a94ec_Banner%20Premier%20Arts%20Dental_mp4.mp4"
+></video></div></div></header><section class="section_layout497"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="layout32_component z-index-2"><div class="w-layout-grid layout32_content"><div data-animate-stagger="150" data-animate="fade-up" class="layout32_content-left"><div class="w-layout-grid layout32_item-list"><div id="w-node-_45720e43-351a-2719-7d79-d08d0a0abf22-aa9b0c6e"><div data-animate-stagger="150" data-animate="fade-up" class="layout497_header"><div class="margin-bottom margin-xsmall"><div class="text-style-tagline">Welcome to Premier Arts Dental</div></div><div class="margin-bottom margin-small"><h2 class="heading-style-h2 text-color-primary">Your trusted dentist in Freehold, NJ.</h2></div><div class="text-rich-text text-color-tertiary w-richtext"><p>If you’re searching for a dentist in Freehold, NJ families and individuals can rely on, you’ve found a practice built around your comfort. Led by Dr. Prachi Shah, DMD, our team accepts 12+ major insurance plans and offers evening appointments on Monday and Thursday until 7:00PM, so quality dental care fits into your schedule.</p></div></div><div class="layout32_item"><div class="layout32_item-text-wrapper"><div class="margin-bottom margin-xsmall"><h3 class="heading-style-h6 text-color-secondary">Meet Dr. Prachi Shah</h3></div><p class="text-size-regular text-color-tertiary">Dr. Shah believes you deserve to understand every option before making a decision about your care. She&#x27;ll walk you through your diagnosis and explain each treatment path openly.</p></div></div><div class="layout32_item"><div class="layout32_item-text-wrapper"><div class="margin-bottom margin-xsmall"><h3 class="heading-style-h6 text-color-secondary">Spa-Like Setting</h3></div><p class="text-size-regular text-color-tertiary">Aromatherapy, tranquil atmosphere, and meticulous attention to detail create an environment that feels more like a spa.</p></div></div><div class="layout32_item"><div class="layout32_item-text-wrapper"><div class="margin-bottom margin-xsmall"><h3 class="heading-style-h6 text-color-secondary">12+ Insurance Plans Accepted</h3></div><p class="text-size-regular text-color-tertiary">Aetna, Cigna, Delta Dental, Guardian, Horizon, MetLife, UnitedHealthcare, and more. Plus CareCredit &amp; Cherry financing.</p></div></div><div class="layout32_item"><div class="layout32_item-text-wrapper"><div class="margin-bottom margin-xsmall"><h3 class="heading-style-h6 text-color-secondary">Evening Hours Until 7 PM</h3></div><p class="text-size-regular text-color-tertiary">Monday and Thursday appointments until 7:00 PM. Saturday by special request. Quality care that fits your schedule.</p></div></div></div></div><div class="margin-top margin-medium"><div class="button-group"><a href="/about-us" class="button w-button">More About Us</a></div></div></div><div data-animate="fade-up" class="layout32_image-wrapper"><img sizes="(max-width: 479px) 48vw, 49vw" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac65806dc426737ee7d108d_Doctor%20Photos%20-%20Premier%20Arts%20Dental%2001-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac65806dc426737ee7d108d_Doctor%20Photos%20-%20Premier%20Arts%20Dental%2001.webp 720w" alt="" src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac65806dc426737ee7d108d_Doctor%20Photos%20-%20Premier%20Arts%20Dental%2001.webp" loading="lazy" class="layout497_image"/></div></div></div></div></div></div><div class="layout497_background-image-wrapper"><div class="layout497_image-overlay-layer"></div><img sizes="100vw" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3)-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3)-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3)-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3)-p-1600.webp 1600w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3).webp 1920w" alt="Abstract blue and white wave design background with smooth gradient curves." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3).webp" loading="lazy" class="layout497_background-image"/></div></section><section class="section_testimonial8"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="testimonial8_component z-index-2"><div class="margin-bottom margin-xxlarge"><div class="text-align-center"><div data-animate-stagger="150" data-animate="fade-up" class="max-width-large align-center"><div class="margin-bottom margin-small"><div class="text-style-tagline text-color-white-70">What Patients Say</div></div><div class="margin-bottom margin-small"><h2 class="heading-style-h2">Real reviews from our Freehold community.</h2></div></div></div></div><div class="margin-bottom margin-xxlarge"><div data-delay="4000" data-animation="slide" class="testimonial8_slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="false" data-animate-stagger="150" data-animate="fade-left"><div class="testimonial8_mask w-slider-mask"><div class="testimonial8_slide w-slide"><div class="testimonial17_card"><div class="testimonial17_content-top"><div class="margin-bottom margin-small"><div class="testimonial17_rating-wrapper"><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div></div></div><div class="text-size-regular text-color-white-90">&quot;Dr Shah and her team are the absolute best. I needed a dentist and she was the first one I found. I&#x27;ve had several procedures done. She was so kind and thorough. Told me everything that had to be done. I highly recommend this practice. The whole staff made me feel like family. &quot;</div></div><div class="margin-top margin-small"><div class="testimonial17_client"><div class="testimonial17_client-info"><div class="text-weight-semibold">Steve S.</div></div></div></div></div></div><div class="testimonial8_slide w-slide"><div class="testimonial17_card"><div class="testimonial17_content-top"><div class="margin-bottom margin-small"><div class="testimonial17_rating-wrapper"><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div></div></div><div class="text-size-regular text-color-white-90">&quot;Premier Arts Dental is the best dental office I have ever been to. The level of honesty is unmatched. Dr. Shah will not give you anything you don&#x27;t need. I highly recommend Premier Art. The receptionist is so welcoming. Dr. Shah’s dental assistant is so helpful and kind. You will not be sorry.&quot;</div></div><div class="margin-top margin-small"><div class="testimonial17_client"><div class="testimonial17_client-info"><div class="text-weight-semibold">Teonnah T.</div></div></div></div></div></div><div class="testimonial8_slide w-slide"><div class="testimonial17_card"><div class="testimonial17_content-top"><div class="margin-bottom margin-small"><div class="testimonial17_rating-wrapper"><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div></div></div><div class="text-size-regular text-color-white-90">&quot;I was very satisfied with the dental work Dr Shah did for me.  She did such a great job for me. I appreciate her so much. Thanks to everyone who works at Premier Arts Dental.  Everyone is so helpful, kind and knowledgeable&quot;</div></div><div class="margin-top margin-small"><div class="testimonial17_client"><div class="testimonial17_client-info"><div class="text-weight-semibold">Theresa G.</div></div></div></div></div></div><div class="testimonial8_slide w-slide"><div class="testimonial17_card"><div class="testimonial17_content-top"><div class="margin-bottom margin-small"><div class="testimonial17_rating-wrapper"><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div></div></div><div class="text-size-regular text-color-white-90">&quot;Dr. Shah and her team are the absolute best. My mother is legally blind &amp; they always go above and beyond for her. They make us feel so welcome and explain all procedures to perfection. We truly value all the support and explanations. We highly recommend this amazing team. Thank you for always being a great team.&quot;</div></div><div class="margin-top margin-small"><div class="testimonial17_client"><div class="testimonial17_client-info"><div class="text-weight-semibold">Amada D.</div></div></div></div></div></div><div class="testimonial8_slide w-slide"><div class="testimonial17_card"><div class="testimonial17_content-top"><div class="margin-bottom margin-small"><div class="testimonial17_rating-wrapper"><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div></div></div><div class="text-size-regular text-color-white-90">&quot;Premier Arts Dental is truly the best! Dr Shah and her team are skilled, friendly, and thorough. Premier Arts always makes my visits easy and they go the extra mile! I highly recommend this office.&quot;</div></div><div class="margin-top margin-small"><div class="testimonial17_client"><div class="testimonial17_client-info"><div class="text-weight-semibold">Tyesha N.</div></div></div></div></div></div><div class="testimonial8_slide w-slide"><div class="testimonial17_card"><div class="testimonial17_content-top"><div class="margin-bottom margin-small"><div class="testimonial17_rating-wrapper"><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div><div class="testimonial17_rating-icon"><div class="icon-embed-xxsmall w-embed"><svg width="100%" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.16379 0.551109C8.47316 -0.183704 9.52684 -0.183703 9.83621 0.551111L11.6621 4.88811C11.7926 5.19789 12.0875 5.40955 12.426 5.43636L17.1654 5.81173C17.9684 5.87533 18.294 6.86532 17.6822 7.38306L14.0713 10.4388C13.8134 10.6571 13.7007 10.9996 13.7795 11.3259L14.8827 15.8949C15.0696 16.669 14.2172 17.2809 13.5297 16.8661L9.47208 14.4176C9.18225 14.2427 8.81775 14.2427 8.52793 14.4176L4.47029 16.8661C3.7828 17.2809 2.93036 16.669 3.11727 15.8949L4.22048 11.3259C4.29928 10.9996 4.18664 10.6571 3.92873 10.4388L0.317756 7.38306C-0.294046 6.86532 0.0315611 5.87533 0.834562 5.81173L5.57402 5.43636C5.91255 5.40955 6.20744 5.19789 6.33786 4.88811L8.16379 0.551109Z" fill="#FFBA00"/>
+</svg></div></div></div></div><div class="text-size-regular text-color-white-90">&quot;Dr. Shah was caring and explained every detail of what was necessary to achieve the best results for my teeth.  The staff Lily and Allesia were excellent to make you feel welcomed and very helpful in all areas of office management.&quot;</div></div><div class="margin-top margin-small"><div class="testimonial17_client"><div class="testimonial17_client-info"><div class="text-weight-semibold">Maureens S.</div></div></div></div></div></div></div><div class="slider-arrow is-centre-previous hide-mobile-landscape w-slider-arrow-left"><div class="slider-arrow-icon_default w-embed"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.31066 8.75001L9.03033 14.4697L7.96967 15.5303L0.439339 8.00001L7.96967 0.469676L9.03033 1.53034L3.31066 7.25001L15.5 7.25L15.5 8.75L3.31066 8.75001Z" fill="currentColor"/>
+</svg></div></div><div class="slider-arrow is-centre-next hide-mobile-landscape w-slider-arrow-right"><div class="slider-arrow-icon_default w-embed"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.6893 7.25L6.96967 1.53033L8.03033 0.469666L15.5607 8L8.03033 15.5303L6.96967 14.4697L12.6893 8.75H0.5V7.25H12.6893Z" fill="currentColor"/>
+</svg></div></div><div class="testimonial8_slide-nav w-slider-nav w-round"></div><div class="hide w-embed"><style>
+/* Inactive dots */
+.testimonial8_slider .w-slider-dot {
+  background-color: #f8fafc !important;
+}
+
+/* Active dot */
+.testimonial8_slider .w-slider-dot.w-active {
+  background-color: #ffffff !important;
+}
+</style></div></div></div><div data-delay="4000" data-animation="slide" class="testimonial8_slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="false" data-animate-stagger="150" data-animate="fade-left"><div class="testimonial8_mask w-slider-mask"><div class="testimonial8_slide w-slide"><div class="testimonial17_card padding-xxsmall"><div class="video-embed w-embed"><div class="wrapper">
+	<div class="youtube" data-embed="UF3ZuC42ClQ">
+		<div class="play-button"></div>
+	</div>
+</div></div></div></div><div class="testimonial8_slide w-slide"><div class="testimonial17_card padding-xxsmall"><div class="video-embed w-embed"><div class="wrapper">
+	<div class="youtube" data-embed="1QJU3C5bjfQ">
+		<div class="play-button"></div>
+	</div>
+</div></div></div></div><div class="testimonial8_slide w-slide"><div class="testimonial17_card padding-xxsmall"><div class="video-embed w-embed"><div class="wrapper">
+	<div class="youtube" data-embed="jKi2l2IjUSw">
+		<div class="play-button"></div>
+	</div>
+</div></div></div></div></div><div class="slider-arrow is-centre-previous hide-mobile-landscape w-slider-arrow-left"><div class="slider-arrow-icon_default w-embed"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.31066 8.75001L9.03033 14.4697L7.96967 15.5303L0.439339 8.00001L7.96967 0.469676L9.03033 1.53034L3.31066 7.25001L15.5 7.25L15.5 8.75L3.31066 8.75001Z" fill="currentColor"/>
+</svg></div></div><div class="slider-arrow is-centre-next hide-mobile-landscape w-slider-arrow-right"><div class="slider-arrow-icon_default w-embed"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.6893 7.25L6.96967 1.53033L8.03033 0.469666L15.5607 8L8.03033 15.5303L6.96967 14.4697L12.6893 8.75H0.5V7.25H12.6893Z" fill="currentColor"/>
+</svg></div></div><div class="testimonial8_slide-nav w-slider-nav w-round"></div><div class="hide w-embed"><style>
+/* Inactive dots */
+.testimonial8_slider .w-slider-dot {
+  background-color: #f8fafc !important;
+}
+
+/* Active dot */
+.testimonial8_slider .w-slider-dot.w-active {
+  background-color: #ffffff !important;
+}
+</style></div></div></div></div></div></div><div class="testimonial8_background-image-wrapper"><div class="testimonial8_image-overlay-layer"></div><img sizes="(max-width: 3333px) 100vw, 3333px" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc312fe0184f45e9b8b00_fb7a133cbfa18c7315b005b02dd7691afa8e5acc-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc312fe0184f45e9b8b00_fb7a133cbfa18c7315b005b02dd7691afa8e5acc-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc312fe0184f45e9b8b00_fb7a133cbfa18c7315b005b02dd7691afa8e5acc-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc312fe0184f45e9b8b00_fb7a133cbfa18c7315b005b02dd7691afa8e5acc-p-1600.webp 1600w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc312fe0184f45e9b8b00_fb7a133cbfa18c7315b005b02dd7691afa8e5acc-p-2000.webp 2000w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc312fe0184f45e9b8b00_fb7a133cbfa18c7315b005b02dd7691afa8e5acc-p-2600.webp 2600w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc312fe0184f45e9b8b00_fb7a133cbfa18c7315b005b02dd7691afa8e5acc-p-3200.webp 3200w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc312fe0184f45e9b8b00_fb7a133cbfa18c7315b005b02dd7691afa8e5acc.webp 3333w" alt="Abstract flowing blue waves on a light blue and white gradient background." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc312fe0184f45e9b8b00_fb7a133cbfa18c7315b005b02dd7691afa8e5acc.webp" loading="lazy" class="testimonial8_background-image"/></div></section><section class="services_horizontal-scroll"><div class="services_container"><div class="services_horizontal-scroll-wrapper"><div class="services_items-wrapper"><div class="services_inner-wrapper"><div data-w-id="00e9934c-7132-8030-6a28-f10b8a60702c" class="track"><div class="camera-view"><div data-animate-stagger="150" data-animate="fade-up" class="max-width-large"><div class="margin-bottom margin-xsmall"><div class="text-style-tagline">Our Services</div></div><div class="margin-bottom margin-xsmall"><h2 class="heading-style-h2 text-color-primary">Meet clinical expertise.</h2></div></div><div class="serrvices_items-wrapper"><div class="services_items-content-wrapper"><div class="service_item"><div class="team16_image-wrapper"><img sizes="(max-width: 4096px) 100vw, 4096px" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc935c0d326b029aea62a_57b6bf36e4a51a6851d8ee4c71d0590b1ff02ba0-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc935c0d326b029aea62a_57b6bf36e4a51a6851d8ee4c71d0590b1ff02ba0-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc935c0d326b029aea62a_57b6bf36e4a51a6851d8ee4c71d0590b1ff02ba0-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc935c0d326b029aea62a_57b6bf36e4a51a6851d8ee4c71d0590b1ff02ba0-p-1600.webp 1600w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc935c0d326b029aea62a_57b6bf36e4a51a6851d8ee4c71d0590b1ff02ba0-p-2000.webp 2000w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc935c0d326b029aea62a_57b6bf36e4a51a6851d8ee4c71d0590b1ff02ba0-p-2600.webp 2600w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc935c0d326b029aea62a_57b6bf36e4a51a6851d8ee4c71d0590b1ff02ba0-p-3200.webp 3200w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc935c0d326b029aea62a_57b6bf36e4a51a6851d8ee4c71d0590b1ff02ba0.webp 4096w" alt="Veneers" src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bc935c0d326b029aea62a_57b6bf36e4a51a6851d8ee4c71d0590b1ff02ba0.webp" loading="lazy" class="team16_image is--1"/></div><div class="team16_item-content"><div class="margin-bottom margin-xsmall"><h4 class="heading-style-h6 text-color-primary">Invisalign Clear Aligners</h4></div><p class="text-size-regular text-color-tertiary">Achieve the straight, beautiful smile you&#x27;ve always wanted with Invisalign—a discreet and comfortable alternative to traditional braces.</p><div class="margin-top margin-xsmall"><div class="button-group"><a href="/services/orthodontics/invisalign" class="button is-icon is-small w-inline-block"><div>Schedule your Invisalign appointment</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M11.3333 10.6668L14 8.00016L11.3333 5.3335M14 8.00016H2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div></div><div class="service_item"><div class="team16_image-wrapper"><img sizes="(max-width: 1450px) 100vw, 1450px" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bcbc423b23b4ef0637bca_f51025ba536e9735310c0062dc413230917a8d18-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bcbc423b23b4ef0637bca_f51025ba536e9735310c0062dc413230917a8d18-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bcbc423b23b4ef0637bca_f51025ba536e9735310c0062dc413230917a8d18-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bcbc423b23b4ef0637bca_f51025ba536e9735310c0062dc413230917a8d18.webp 1450w" alt="Veneers" src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bcbc423b23b4ef0637bca_f51025ba536e9735310c0062dc413230917a8d18.webp" loading="lazy" class="team16_image"/></div><div class="team16_item-content"><div class="margin-bottom margin-xsmall"><h4 class="heading-style-h6 text-color-primary">Cosmetic Dentistry</h4></div><p class="text-size-regular text-color-tertiary">Veneers, Zoom whitening, dental bonding, and smile makeovers designed to help you look and feel your best.</p><div class="margin-top margin-xsmall"><div class="button-group"><a href="/services/cosmetic-dentistry" class="button is-icon is-small w-inline-block"><div>Schedule your cosmetic consult</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M11.3333 10.6668L14 8.00016L11.3333 5.3335M14 8.00016H2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div></div><div class="service_item"><div class="team16_image-wrapper"><img sizes="(max-width: 1560px) 100vw, 1560px" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bcce2d7747684b8cfb7d4_dental-implant-model-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bcce2d7747684b8cfb7d4_dental-implant-model-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bcce2d7747684b8cfb7d4_dental-implant-model-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bcce2d7747684b8cfb7d4_dental-implant-model.webp 1560w" alt="Veneers" src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bcce2d7747684b8cfb7d4_dental-implant-model.webp" loading="lazy" class="team16_image"/></div><div class="team16_item-content"><div class="margin-bottom margin-xsmall"><h4 class="heading-style-h6 text-color-primary">Implants &amp; Restorative Care</h4></div><p class="text-size-regular text-color-tertiary">Dental implants, All-on-6, crowns, bridges, and dentures. Planned with 3D CT scanning and iTero digital impressions.</p><div class="margin-top margin-xsmall"><div class="button-group"><a href="/services/restorative" class="button is-icon is-small w-inline-block"><div>Schedule your restorative consult</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M11.3333 10.6668L14 8.00016L11.3333 5.3335M14 8.00016H2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div></div><div class="service_item"><div class="team16_image-wrapper"><img sizes="100vw" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bf2716f8b833baf1fca92_d08f6eea5cc34010c3ec8f340466b149d1b79b35-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bf2716f8b833baf1fca92_d08f6eea5cc34010c3ec8f340466b149d1b79b35-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bf2716f8b833baf1fca92_d08f6eea5cc34010c3ec8f340466b149d1b79b35.webp 944w" alt="Veneers" src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bf2716f8b833baf1fca92_d08f6eea5cc34010c3ec8f340466b149d1b79b35.webp" loading="lazy" class="team16_image"/></div><div class="team16_item-content"><div class="margin-bottom margin-xsmall"><h4 class="heading-style-h6 text-color-primary">General &amp; Preventive Dentistry</h4></div><p class="text-size-regular text-color-tertiary">Cleanings, exams, digital X-rays, fluoride, sealants, and oral cancer screenings. We focus on catching concerns early.</p><div class="margin-top margin-xsmall"><div class="button-group"><a href="/services/general-preventive" class="button is-icon is-small w-inline-block"><div>Schedule your general wellness consult</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M11.3333 10.6668L14 8.00016L11.3333 5.3335M14 8.00016H2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div></div><div class="service_item"><div class="team16_image-wrapper"><img sizes="(max-width: 848px) 100vw, 848px" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bf27309cf354561ed05bc_f9db7e8d6af16c1c1e0675c95417c1d6b3c1ecf6-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bf27309cf354561ed05bc_f9db7e8d6af16c1c1e0675c95417c1d6b3c1ecf6.webp 848w" alt="Veneers" src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bf27309cf354561ed05bc_f9db7e8d6af16c1c1e0675c95417c1d6b3c1ecf6.webp" loading="lazy" class="team16_image"/></div><div class="team16_item-content"><div class="margin-bottom margin-xsmall"><h4 class="heading-style-h6 text-color-primary">Emergency Dental Care</h4></div><p class="text-size-regular text-color-tertiary">Toothache or dental injury? Our team works to accommodate urgent visits as quickly as possible. We’re here to help.</p><div class="margin-top margin-xsmall"><div class="button-group"><a href="/services/general-preventive/emergency-dentistry" class="button is-icon is-small w-inline-block"><div>Schedule your emergency visit</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M11.3333 10.6668L14 8.00016L11.3333 5.3335M14 8.00016H2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div></div></div></div></div></div></div></div></div></div></section><section class="section_features"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="header-rowmask-group"><div class="header-row"><div data-animate-stagger="150" data-animate="fade-up" class="max-width-large"><div class="margin-bottom margin-xsmall"><div class="text-style-tagline text-color-green">What Sets Us Apart</div></div><h2 class="heading-style-h2 text-color-primary">Experience the difference.</h2></div><div data-animate-stagger="150" data-animate="fade-up" class="text-link"><a href="/about-us" class="button is-link is-icon w-inline-block"><div class="text-color-tertiary">About Our Practice</div><div class="icon-embed-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<rect width="32" height="32" rx="16" fill="#479EF7"/>
+<path d="M19.3333 18.6668L22 16.0002L19.3333 13.3335M22 16.0002H10" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div><div class="w-layout-grid feature-grid"><div class="feature-wrapper-2"><div class="text-number">01</div><div class="feature-image-wrapper-1"><div class="bg-color-div"></div><div class="feature-image-wrapper-2"><img src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac658093e9a208a2afd7703_Office%20Photos%20Premier%20Arts%20Dental%2001.webp" loading="lazy" sizes="(max-width: 479px) 48vw, (max-width: 991px) 49vw, (max-width: 3240px) 50vw, 1620px" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac658093e9a208a2afd7703_Office%20Photos%20Premier%20Arts%20Dental%2001-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac658093e9a208a2afd7703_Office%20Photos%20Premier%20Arts%20Dental%2001-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac658093e9a208a2afd7703_Office%20Photos%20Premier%20Arts%20Dental%2001-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac658093e9a208a2afd7703_Office%20Photos%20Premier%20Arts%20Dental%2001-p-1600.webp 1600w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac658093e9a208a2afd7703_Office%20Photos%20Premier%20Arts%20Dental%2001.webp 1620w" alt="" class="feature-image"/></div></div><div class="feature-text-wrapper"><h3 class="heading-style-h6 text-color-primary">Spa-Like Setting</h3><div class="text-rich-text text-color-slate-gray w-richtext"><p>Aromatherapy, a tranquil atmosphere, and meticulous attention to detail create an environment that feels more like a spa than a dental practice. Behind that welcoming setting, we use 3D CT scanning, digital X-rays, and iTero digital impressions.</p></div><div class="feature_flex-wrap"><div class="backgroundshadow"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.6949 3.70495C11.8262 3.83622 11.8999 4.01424 11.8999 4.19985C11.8999 4.38547 11.8262 4.56348 11.6949 4.69475L6.09494 10.2948C5.96367 10.426 5.78566 10.4997 5.60004 10.4997C5.41443 10.4997 5.23641 10.426 5.10514 10.2948L2.30514 7.49475C2.17763 7.36273 2.10707 7.18591 2.10867 7.00237C2.11026 6.81883 2.18388 6.64326 2.31367 6.51348C2.44345 6.38369 2.61902 6.31007 2.80256 6.30848C2.9861 6.30688 3.16292 6.37744 3.29494 6.50495L5.60004 8.81005L10.7051 3.70495C10.8364 3.57372 11.0144 3.5 11.2 3.5C11.3857 3.5 11.5637 3.57372 11.6949 3.70495Z" fill="#479EF7"/>
+</svg></div><div>3D CT Scanning</div></div><div class="backgroundshadow"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.6949 3.70495C11.8262 3.83622 11.8999 4.01424 11.8999 4.19985C11.8999 4.38547 11.8262 4.56348 11.6949 4.69475L6.09494 10.2948C5.96367 10.426 5.78566 10.4997 5.60004 10.4997C5.41443 10.4997 5.23641 10.426 5.10514 10.2948L2.30514 7.49475C2.17763 7.36273 2.10707 7.18591 2.10867 7.00237C2.11026 6.81883 2.18388 6.64326 2.31367 6.51348C2.44345 6.38369 2.61902 6.31007 2.80256 6.30848C2.9861 6.30688 3.16292 6.37744 3.29494 6.50495L5.60004 8.81005L10.7051 3.70495C10.8364 3.57372 11.0144 3.5 11.2 3.5C11.3857 3.5 11.5637 3.57372 11.6949 3.70495Z" fill="#479EF7"/>
+</svg></div><div>Digital X-Rays</div></div><div class="backgroundshadow"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.6949 3.70495C11.8262 3.83622 11.8999 4.01424 11.8999 4.19985C11.8999 4.38547 11.8262 4.56348 11.6949 4.69475L6.09494 10.2948C5.96367 10.426 5.78566 10.4997 5.60004 10.4997C5.41443 10.4997 5.23641 10.426 5.10514 10.2948L2.30514 7.49475C2.17763 7.36273 2.10707 7.18591 2.10867 7.00237C2.11026 6.81883 2.18388 6.64326 2.31367 6.51348C2.44345 6.38369 2.61902 6.31007 2.80256 6.30848C2.9861 6.30688 3.16292 6.37744 3.29494 6.50495L5.60004 8.81005L10.7051 3.70495C10.8364 3.57372 11.0144 3.5 11.2 3.5C11.3857 3.5 11.5637 3.57372 11.6949 3.70495Z" fill="#479EF7"/>
+</svg></div><div>iTero Impressions</div></div></div></div></div><div class="feature-wrapper-2"><div class="spacer-top"></div><div class="text-number">02</div><div class="feature-image-wrapper-1"><div class="bg-color-div green"></div><div class="feature-image-wrapper-2"><img src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac658060b17331b4e9c699f_Group%20Photos%20-%20Premier%20Arts%20Dental%2002.webp" loading="lazy" sizes="(max-width: 479px) 57vw, (max-width: 991px) 49vw, (max-width: 3240px) 50vw, 1620px" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac658060b17331b4e9c699f_Group%20Photos%20-%20Premier%20Arts%20Dental%2002-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac658060b17331b4e9c699f_Group%20Photos%20-%20Premier%20Arts%20Dental%2002-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac658060b17331b4e9c699f_Group%20Photos%20-%20Premier%20Arts%20Dental%2002-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac658060b17331b4e9c699f_Group%20Photos%20-%20Premier%20Arts%20Dental%2002-p-1600.webp 1600w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6ac658060b17331b4e9c699f_Group%20Photos%20-%20Premier%20Arts%20Dental%2002.webp 1620w" alt="" class="feature-image"/></div></div><div class="feature-text-wrapper"><h3 class="heading-style-h6">Transparent Treatment Planning</h3><div class="text-rich-text text-color-slate-gray w-richtext"><p>Dr. Shah believes you deserve to understand every option before making a decision. She’ll walk you through your diagnosis, explain each treatment path, and discuss costs and insurance coverage openly.</p></div><div class="button-group"><a href="/about-us/dr-prachi-shah" class="button is-link is-icon is-blue w-inline-block"><div>Meet Dr. Shah</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M11.3333 10.6668L14 8.00016L11.3333 5.3335M14 8.00016H2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div></div></div></div></div></div></section><section class="section_layout59"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="layout59_component"><div class="w-layout-grid layout59_content"><div data-animate-stagger="150" data-animate="fade-up" class="layout59_content-left"><div class="margin-bottom margin-xsmall"><div class="text-style-tagline text-color-green">Patient Education</div></div><h2 class="heading-style-h2 text-color-primary">An informed patient is a confident patient.</h2><div class="margin-top margin-small"><div class="text-rich-text text-color-slate-gray w-richtext"><p>Understanding your dental health empowers you to make better decisions for yourself and your family. Our blog covers everything from what to expect at your first visit, to how dental implants work, to tips for keeping your smile bright between appointments.</p></div></div></div><div data-animate-stagger="150" data-animate="fade-up" class="layout59_content-right"><div class="w-layout-grid layout59_item-list"><div class="layout59_item"><div class="margin-bottom margin-xsmall"><div class="layout59_item-icon-wrapper"><div class="icon-embed-medium w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 40 40" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<rect width="40" height="40" rx="12" fill="#DFEDFF"/>
+<path d="M20 15.2107V26.044M20 26.044C20.9733 25.3973 22.295 24.9998 23.75 24.9998C25.2058 24.9998 26.5267 25.3973 27.5 26.044V15.2107C26.5267 14.564 25.2058 14.1665 23.75 14.1665C22.295 14.1665 20.9733 14.564 20 15.2107C19.0267 14.564 17.705 14.1665 16.25 14.1665C14.795 14.1665 13.4733 14.564 12.5 15.2107V26.044C13.4733 25.3973 14.795 24.9998 16.25 24.9998C17.705 24.9998 19.0267 25.3973 20 26.044Z" stroke="#479EF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div></div><div class="margin-bottom margin-xsmall"><h3 class="heading-style-h6 text-color-primary">Dental Health Tips</h3></div><div class="margin-bottom margin-xsmall"><p class="text-size-regular text-color-slate-gray">Practical advice for maintaining a healthy smile at every stage of life.</p></div><div class="button-group"><a href="/blog" class="button is-link is-icon is-blue w-inline-block"><div>Read Articles</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M11.3333 10.6668L14 8.00016L11.3333 5.3335M14 8.00016H2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div><div class="layout59_item is-blue"><div class="margin-bottom margin-xsmall"><div class="layout59_item-icon-wrapper"><div class="icon-embed-medium w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 40 40" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<rect width="40" height="40" rx="12" fill="currentColor" fill-opacity="0.1"/>
+<path d="M18.0525 24.1667H21.9467M20 12.5V13.3333M25.3033 14.6967L24.7142 15.2858M27.5 20H26.6667M13.3333 20H12.5M15.2858 15.2858L14.6967 14.6967M17.0533 22.9467C16.4707 22.3639 16.074 21.6215 15.9133 20.8132C15.7526 20.005 15.8352 19.1673 16.1506 18.406C16.466 17.6447 17.0001 16.994 17.6852 16.5362C18.3704 16.0785 19.176 15.8341 20 15.8341C20.824 15.8341 21.6296 16.0785 22.3148 16.5362C22.9999 16.994 23.534 17.6447 23.8494 18.406C24.1648 19.1673 24.2474 20.005 24.0867 20.8132C23.926 21.6215 23.5293 22.3639 22.9467 22.9467L22.49 23.4025C22.2289 23.6636 22.0218 23.9736 21.8806 24.3148C21.7393 24.6559 21.6666 25.0216 21.6667 25.3908V25.8333C21.6667 26.2754 21.4911 26.6993 21.1785 27.0118C20.866 27.3244 20.442 27.5 20 27.5C19.558 27.5 19.134 27.3244 18.8215 27.0118C18.5089 26.6993 18.3333 26.2754 18.3333 25.8333V25.3908C18.3333 24.645 18.0367 23.9292 17.51 23.4025L17.0533 22.9467Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div></div><div class="margin-bottom margin-xsmall"><h3 class="heading-style-h6">Treatment Guides</h3></div><div class="margin-bottom margin-xsmall"><p class="text-size-regular text-color-white-70">Deep dives on implants, veneers, Invisalign, and more — written in plain language.</p></div><div class="button-group"><a href="/services" class="button is-link is-icon is-alternate w-inline-block"><div>Explore Guides</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M11.3333 10.6668L14 8.00016L11.3333 5.3335M14 8.00016H2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div><div class="margin-top margin-small"><div id="w-node-_76ace3d0-6823-8a88-3f6e-4726e203e753-aa9b0c6e" class="layout59_grid"><div class="layout59_grid-item"><div class="layout9_item-icon-wrapper"><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 20" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M15.8333 16.6668H4.16667C3.72464 16.6668 3.30072 16.4912 2.98816 16.1787C2.67559 15.8661 2.5 15.4422 2.5 15.0002V5.00016C2.5 4.55814 2.67559 4.13421 2.98816 3.82165C3.30072 3.50909 3.72464 3.3335 4.16667 3.3335H12.5C12.942 3.3335 13.366 3.50909 13.6785 3.82165C13.9911 4.13421 14.1667 4.55814 14.1667 5.00016V5.8335M15.8333 16.6668C15.3913 16.6668 14.9674 16.4912 14.6548 16.1787C14.3423 15.8661 14.1667 15.4422 14.1667 15.0002V5.8335M15.8333 16.6668C16.2754 16.6668 16.6993 16.4912 17.0118 16.1787C17.3244 15.8661 17.5 15.4422 17.5 15.0002V7.50016C17.5 7.05814 17.3244 6.63421 17.0118 6.32165C16.6993 6.00909 16.2754 5.8335 15.8333 5.8335H14.1667M10.8333 3.3335H7.5M5.83333 13.3335H10.8333M5.83333 10.0002H10.8333M9.16667 6.66683H10.8333" stroke="#479EF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><div class="layout9_item-text-wrapper"><p class="text-size-regular text-color-dark-gray">Visit our blog for the latest dental health resources and practice news.</p></div></div><div class="layout59_btn-wrap"><a href="/blog" class="button is-link is-icon is-blue w-inline-block"><div>View All Posts</div><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M11.3333 10.6668L14 8.00016L11.3333 5.3335M14 8.00016H2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div></div></div></div></div></div></div></section><section class="section_layout10"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="layout10_component z-index-2"><div class="w-layout-grid layout10_content"><div data-animate-stagger="150" data-animate="fade-up" class="layout10_content-left"><div class="margin-bottom margin-xsmall"><div class="text-style-tagline">Welcoming New Patients in Freehold Township</div></div><div class="margin-bottom margin-small"><h2 class="heading-style-h2 text-color-primary">Getting started is straightforward.</h2></div><div class="margin-bottom margin-medium"><div class="text-rich-text text-color-dark-gray w-richtext"><p>We’re actively accepting new patients and would love to welcome you to our practice. Visit our Patient Information page to learn what to expect at your first visit and to access any forms you may need ahead of time.</p></div></div><div class="margin-top margin-medium"><div class="layout10_insurance-card"><h3 class="heading-style-h5">Insurance &amp; Financing Options</h3><div class="text-rich-text w-richtext"><p>We accept 12+ major insurance plans, including Aetna, Cigna, Delta Dental, Guardian, Horizon, MetLife, and UnitedHealthcare. For patients without insurance or those needing additional flexibility, we offer CareCredit, Cherry, and HFD financing, along with in-house payment plans and our Premier Advantage Program. Visit our Insurance &amp; Financing page for a complete list of accepted plans.</p></div><div class="layout10_insurance-wrap"><div class="text-block">Aetna</div><div class="text-block">Cigna</div><div class="text-block">Delta Dental</div><div class="text-block">Guardian</div><div class="text-block">Horizon</div><div class="text-block">MetLife</div><div class="text-block">UnitedHealthcare</div><div class="text-block">+ more</div></div></div></div></div><div data-animate-stagger="150" data-animate="fade-up"><div class="map_card-wrapper"><h3 class="heading-style-h5 text-color-primary">Convenient Evening Hours</h3><div class="text-rich-text text-color-primary w-richtext"><p>We understand that busy schedules can make it difficult to prioritize dental visits. That&#x27;s why we offer evening hours on Monday and Thursday until 7:00 PM, with Saturday appointments available by special request. Being your dentist Freehold NJ residents can count on means making care accessible when you need it most.</p></div><div class="map_office-hours"><div class="map_office-hours-wrap"><div class="text-size-regular text-color-dark-gray">Monday</div><div class="text-size-regular text-color-secondary">10:00 AM – 7:00 PM</div></div><div class="map_office-hours-wrap"><div class="text-size-regular text-color-dark-gray">Tuesday</div><div class="text-size-regular text-color-slate-gray">8:00 AM – 5:00 PM</div></div><div class="map_office-hours-wrap"><div class="text-size-regular text-color-dark-gray">Wednesday</div><div class="text-size-regular text-color-light-gray">Closed</div></div><div class="map_office-hours-wrap"><div class="text-size-regular text-color-dark-gray">Thursday</div><div class="text-size-regular text-color-secondary">10:00 AM – 7:00 PM</div></div><div class="map_office-hours-wrap"><div class="text-size-regular text-color-dark-gray">Friday</div><div class="text-size-regular text-color-slate-gray">8:00 AM – 2:00 PM</div></div><div class="map_office-hours-wrap"><div class="text-size-regular text-color-dark-gray">Saturday</div><div class="text-size-regular text-color-light-gray">By Request</div></div><div class="map_office-hours-wrap"><div class="text-size-regular text-color-dark-gray">Sunday</div><div class="text-size-regular text-color-light-gray">Closed</div></div></div></div><div class="margin-top margin-small"><div id="w-node-d7c1a70c-17f5-efe9-f58d-07c0ed164dca-aa9b0c6e" class="layout10_address-wrap"><div class="layout10_grid-item"><div class="layout9_item-icon-wrapper"><div class="icon-embed-medium w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 40 40" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<rect width="40" height="40" rx="12" fill="#DFEDFF"/>
+<path d="M24.7143 23.8806L21.1785 27.4164C21.0239 27.5712 20.8402 27.694 20.6381 27.7778C20.436 27.8616 20.2194 27.9047 20.0006 27.9047C19.7818 27.9047 19.5651 27.8616 19.363 27.7778C19.1609 27.694 18.9773 27.5712 18.8227 27.4164L15.286 23.8806C14.3537 22.9482 13.7188 21.7603 13.4616 20.4671C13.2044 19.1739 13.3364 17.8335 13.841 16.6154C14.3456 15.3972 15.2001 14.356 16.2964 13.6235C17.3927 12.891 18.6816 12.5 20.0002 12.5C21.3187 12.5 22.6076 12.891 23.7039 13.6235C24.8003 14.356 25.6547 15.3972 26.1593 16.6154C26.6639 17.8335 26.796 19.1739 26.5388 20.4671C26.2816 21.7603 25.6466 22.9482 24.7143 23.8806Z" stroke="#479EF7" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.5 19.167C22.5 19.83 22.2366 20.4659 21.7678 20.9348C21.2989 21.4036 20.663 21.667 20 21.667C19.337 21.667 18.7011 21.4036 18.2322 20.9348C17.7634 20.4659 17.5 19.83 17.5 19.167C17.5 18.504 17.7634 17.8681 18.2322 17.3992C18.7011 16.9304 19.337 16.667 20 16.667C20.663 16.667 21.2989 16.9304 21.7678 17.3992C22.2366 17.8681 22.5 18.504 22.5 19.167Z" stroke="#479EF7" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><div><p class="text-size-regular text-weight-medium text-color-mirage">4400 U.S. 9 #3200</p><p class="text-size-regular text-color-slate-gray">Freehold Township, New Jersey 07728</p></div></div></div></div></div></div></div></div></div></div><div class="layout10_background-image-wrapper"><div class="layout10_image-overlay-layer"></div><img sizes="100vw" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdb1b581b66e08278910a_abstract-waves.jpg%20(1)-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdb1b581b66e08278910a_abstract-waves.jpg%20(1)-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdb1b581b66e08278910a_abstract-waves.jpg%20(1)-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdb1b581b66e08278910a_abstract-waves.jpg%20(1).webp 1440w" alt="Abstract blue and white curved wave shapes blending upwards on a light background." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdb1b581b66e08278910a_abstract-waves.jpg%20(1).webp" loading="lazy" class="layout10_background-image"/></div></section><section data-wf--section_faq4--variant="base" class="section_faq4"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="faq4_component z-index-2"><div class="margin-bottom margin-xxlarge"><div class="text-align-center"><div data-animate-stagger="150" data-animate="fade-up" class="max-width-large align-center"><div class="margin-bottom margin-xsmall"><div class="text-style-tagline">Common Questions</div></div><div class="text-rich-text text-color-primary w-richtext"><h2>Frequently Asked Questions</h2></div></div></div></div><div class="max-width-large align-center"><div data-animate-stagger="150" data-animate="fade-up" class="faq4_list"><div data-wf--faq4_accordion--variant="base" class="faq4_accordion"><div data-w-id="10cb12e8-fedb-8d92-e0f1-cbbec89a1bc3" class="faq4_question"><div>What insurance plans does Premier Arts Dental accept?</div><div class="faq4_icon-wrappper"><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 20" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M15.8332 7.5L9.99984 13.3333L4.1665 7.5" stroke="#94A3B8" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div></div><div class="faq4_answer"><div class="margin-bottom margin-small"><div class="text-rich-text w-richtext"><p>We accept 12+ major insurance plans including Aetna, Cigna, Delta Dental, Guardian, Horizon, MetLife, UnitedHealthcare, Ameritas, Anthem, Careington, Dental Network of America, and Principal Financial. We also offer CareCredit, Cherry, and HFD financing, in-house payment plans, and the Premier Advantage Program for uninsured patients. Our team is happy to verify your benefits before your appointment.</p></div></div></div></div><div data-wf--faq4_accordion--variant="base" class="faq4_accordion"><div data-w-id="10cb12e8-fedb-8d92-e0f1-cbbec89a1bc3" class="faq4_question"><div>Are you accepting new patients in Freehold, NJ?</div><div class="faq4_icon-wrappper"><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 20" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M15.8332 7.5L9.99984 13.3333L4.1665 7.5" stroke="#94A3B8" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div></div><div class="faq4_answer"><div class="margin-bottom margin-small"><div class="text-rich-text w-richtext"><p>Yes, we are actively welcoming new patients from Freehold and the surrounding communities, including Manalapan, Englishtown, Marlboro, and Howell. You can call us at (732) 702-2787 or visit our <a href="/contact-us">Contact</a> page to schedule your first visit. We&#x27;ll make sure your experience is comfortable from the very first call.</p></div></div></div></div><div data-wf--faq4_accordion--variant="base" class="faq4_accordion"><div data-w-id="10cb12e8-fedb-8d92-e0f1-cbbec89a1bc3" class="faq4_question"><div>Do you offer evening or weekend dental appointments?</div><div class="faq4_icon-wrappper"><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 20" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M15.8332 7.5L9.99984 13.3333L4.1665 7.5" stroke="#94A3B8" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div></div><div class="faq4_answer"><div class="margin-bottom margin-small"><div class="text-rich-text w-richtext"><p>We offer evening hours on Monday and Thursday until 7:00 PM, which is ideal for working professionals and families with daytime commitments. Saturday appointments are also available by special request. We&#x27;re committed to making quality dental care fit your life, not the other way around.</p></div></div></div></div></div></div></div></div></div></div><div class="faq4_background-image-wrapper"><div class="faq4_image-overlay-layer"></div><img sizes="100vw" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3)-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3)-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3)-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3)-p-1600.webp 1600w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3).webp 1920w" alt="Abstract blue and white wave design background with smooth gradient curves." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3).webp" loading="lazy" class="faq4_background-image"/></div></section><section class="section_cta41"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="cta41_component z-index-2"><div class="cta41_card"><div data-animate-stagger="150" data-animate="fade-up" class="cta41_card-content"><div class="max-width-large"><div class="cta-rich-text w-richtext"><h2>Welcome to a better dental visit.</h2><p>We&#x27;d love to show you what thoughtful, personalized dentistry feels like. Whether you need a routine checkup or a comprehensive treatment plan, Premier Arts Dental is ready to welcome you.</p></div></div><div class="margin-top margin-medium"><div class="button-group is-center"><a href="tel:(732)702-2787" class="button is-icon w-inline-block"><div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M2 3.33333C2 2.97971 2.14048 2.64057 2.39052 2.39052C2.64057 2.14048 2.97971 2 3.33333 2H5.52C5.65986 2.00011 5.79615 2.0442 5.90957 2.12603C6.02299 2.20787 6.1078 2.3233 6.152 2.456L7.15067 5.45133C7.20127 5.60356 7.19528 5.76893 7.13381 5.9171C7.07234 6.06527 6.9595 6.1863 6.816 6.258L5.31133 7.01133C6.04888 8.64369 7.35631 9.95112 8.98867 10.6887L9.742 9.184C9.8137 9.0405 9.93473 8.92766 10.0829 8.86619C10.2311 8.80472 10.3964 8.79873 10.5487 8.84933L13.544 9.848C13.6768 9.89223 13.7923 9.97715 13.8742 10.0907C13.956 10.2043 14 10.3407 14 10.4807V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H12C6.47733 14 2 9.52267 2 4V3.33333Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div><div>Call Us — (732) 702-2787</div></a><a href="/contact-us" class="button is-secondary is-alternate w-button">Contact Us</a></div></div></div><div class="cta41_background-image-wrapper"><div class="cta41_image-overlay-layer"></div><div class="cta41_background-image w-embed"><video
+  class="brand-video"
+  autoplay
+  loop
+  muted
+  playsinline
+  src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c%2F6a2b283b2dc4436259a050b1_AdobeStock_369817497_mp4.mp4"
+></video></div></div></div></div></div></div></div><div class="cta41_section-background-image-wrapper"><div class="cta41_section_image-overlay-layer"></div><img sizes="100vw" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3)-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3)-p-800.webp 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3)-p-1080.webp 1080w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3)-p-1600.webp 1600w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3).webp 1920w" alt="Abstract blue and white wave design background with smooth gradient curves." src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a2bdaba88829c3cbf499915_23257865fdb770c66125ec380f10c7ef8c0c6dbd%20(3).webp" loading="lazy" class="cta41_section_background-image"/></div></section></main><footer class="footer1_component"><div class="padding-global"><div class="container-large"><div class="padding-vertical padding-xxlarge"><div class="padding-bottom padding-xxlarge"><div class="w-layout-grid footer1_top-wrapper"><div class="footer1_left-wrapper"><div class="margin-bottom margin-small"><a href="#" aria-label="Premier Arts Dental" role="link" class="footer1_logo-link w-nav-brand"><img sizes="100vw" srcset="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a3107708344833eb4091389_LogoPremier-p-500.webp 500w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a3107708344833eb4091389_LogoPremier-p-800.png 800w, https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a3107708344833eb4091389_LogoPremier.webp 1366w" alt="" src="https://cdn.prod.website-files.com/6a29d43f03b10014aa9b0c8c/6a3107708344833eb4091389_LogoPremier.webp" loading="lazy" class="footer1_logo"/></a></div><div class="margin-bottom margin-small"><div class="text-size-regular text-color-white-50">Where advanced dentistry meets genuine warmth. Quality luxury care for Freehold families.</div></div><div class="social-icons1_component"><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><div class="social-icons1_component"><div class="w-layout-grid social-icons1_list"><a href="https://www.facebook.com/people/Premier-Arts-Dental/100063568869487/" target="_blank" class="social-icons1_link w-inline-block"><div class="icon-embed-medium w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 36 36" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<rect width="36" height="36" rx="18" fill="currentColor" fill-opacity="0.1"/>
+<path d="M22.0003 11.3335H20.0003C19.1163 11.3335 18.2684 11.6847 17.6433 12.3098C17.0182 12.9349 16.667 13.7828 16.667 14.6668V16.6668H14.667V19.3335H16.667V24.6668H19.3337V19.3335H21.3337L22.0003 16.6668H19.3337V14.6668C19.3337 14.49 19.4039 14.3204 19.5289 14.1954C19.6539 14.0704 19.8235 14.0002 20.0003 14.0002H22.0003V11.3335Z" fill="currentColor"/>
+</svg></div></a><a href="https://www.youtube.com/@PremierArtsDental" target="_blank" class="social-icons1_link w-inline-block"><div class="icon-embed-medium w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 36 36" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+  <rect width="36" height="36" rx="18" fill="currentColor" fill-opacity="0.1"/>
+  <path d="M24.667 13.8335C24.5003 13.1668 24.0003 12.6668 23.3337 12.5002C22.167 12.1668 18.0003 12.1668 18.0003 12.1668C18.0003 12.1668 13.8337 12.1668 12.667 12.5002C12.0003 12.6668 11.5003 13.1668 11.3337 13.8335C11.0003 15.0002 11.0003 17.5002 11.0003 17.5002C11.0003 17.5002 11.0003 20.0002 11.3337 21.1668C11.5003 21.8335 12.0003 22.3335 12.667 22.5002C13.8337 22.8335 18.0003 22.8335 18.0003 22.8335C18.0003 22.8335 22.167 22.8335 23.3337 22.5002C24.0003 22.3335 24.5003 21.8335 24.667 21.1668C25.0003 20.0002 25.0003 17.5002 25.0003 17.5002C25.0003 17.5002 25.0003 15.0002 24.667 13.8335Z" fill="currentColor"/>
+  <path d="M16.667 20.1668V14.8335L21.3337 17.5002L16.667 20.1668Z" fill="#1A1A1A"/>
+</svg></div></a><a href="https://www.instagram.com/premierartsdental/" target="_blank" class="social-icons1_link w-inline-block"><div class="icon-embed-medium w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 36 36" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<rect width="36" height="36" rx="18" fill="currentColor" fill-opacity="0.1"/>
+<g clip-path="url(#clip0_29_4424)">
+<path d="M18 11.442C20.136 11.442 20.3893 11.45 21.2333 11.4887C23.4013 11.5873 24.414 12.616 24.5127 14.768C24.5513 15.6113 24.5587 15.8647 24.5587 18.0007C24.5587 20.1373 24.5507 20.39 24.5127 21.2333C24.4133 23.3833 23.4033 24.414 21.2333 24.5127C20.3893 24.5513 20.1373 24.5593 18 24.5593C15.864 24.5593 15.6107 24.5513 14.7673 24.5127C12.594 24.4133 11.5867 23.38 11.488 21.2327C11.4493 20.3893 11.4413 20.1367 11.4413 18C11.4413 15.864 11.45 15.6113 11.488 14.7673C11.5873 12.616 12.5973 11.5867 14.7673 11.488C15.6113 11.45 15.864 11.442 18 11.442ZM18 10C15.8273 10 15.5553 10.0093 14.702 10.048C11.7967 10.1813 10.182 11.7933 10.0487 14.7013C10.0093 15.5553 10 15.8273 10 18C10 20.1727 10.0093 20.4453 10.048 21.2987C10.1813 24.204 11.7933 25.8187 14.7013 25.952C15.5553 25.9907 15.8273 26 18 26C20.1727 26 20.4453 25.9907 21.2987 25.952C24.2013 25.8187 25.82 24.2067 25.9513 21.2987C25.9907 20.4453 26 20.1727 26 18C26 15.8273 25.9907 15.5553 25.952 14.702C25.8213 11.7993 24.2073 10.182 21.2993 10.0487C20.4453 10.0093 20.1727 10 18 10ZM18 13.892C17.4605 13.892 16.9263 13.9983 16.4279 14.2047C15.9295 14.4111 15.4767 14.7137 15.0952 15.0952C14.7137 15.4767 14.4111 15.9295 14.2047 16.4279C13.9983 16.9263 13.892 17.4605 13.892 18C13.892 18.5395 13.9983 19.0737 14.2047 19.5721C14.4111 20.0705 14.7137 20.5233 15.0952 20.9048C15.4767 21.2863 15.9295 21.5889 16.4279 21.7953C16.9263 22.0017 17.4605 22.108 18 22.108C19.0895 22.108 20.1344 21.6752 20.9048 20.9048C21.6752 20.1344 22.108 19.0895 22.108 18C22.108 16.9105 21.6752 15.8656 20.9048 15.0952C20.1344 14.3248 19.0895 13.892 18 13.892ZM18 20.6667C17.2928 20.6667 16.6145 20.3857 16.1144 19.8856C15.6143 19.3855 15.3333 18.7072 15.3333 18C15.3333 17.2928 15.6143 16.6145 16.1144 16.1144C16.6145 15.6143 17.2928 15.3333 18 15.3333C18.7072 15.3333 19.3855 15.6143 19.8856 16.1144C20.3857 16.6145 20.6667 17.2928 20.6667 18C20.6667 18.7072 20.3857 19.3855 19.8856 19.8856C19.3855 20.3857 18.7072 20.6667 18 20.6667ZM22.2707 12.77C22.1446 12.77 22.0197 12.7948 21.9032 12.8431C21.7866 12.8914 21.6808 12.9621 21.5916 13.0513C21.5024 13.1405 21.4317 13.2463 21.3834 13.3628C21.3352 13.4793 21.3103 13.6042 21.3103 13.7303C21.3103 13.8564 21.3352 13.9813 21.3834 14.0978C21.4317 14.2144 21.5024 14.3202 21.5916 14.4094C21.6808 14.4986 21.7866 14.5693 21.9032 14.6176C22.0197 14.6658 22.1446 14.6907 22.2707 14.6907C22.5254 14.6907 22.7696 14.5895 22.9497 14.4094C23.1298 14.2293 23.231 13.985 23.231 13.7303C23.231 13.4756 23.1298 13.2314 22.9497 13.0513C22.7696 12.8712 22.5254 12.77 22.2707 12.77Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_29_4424">
+<rect width="16" height="16" fill="currentColor" transform="translate(10 10)"/>
+</clipPath>
+</defs>
+</svg></div></a><a href="https://maps.app.goo.gl/jx52f3DpsPrVjJKx7" target="_blank" class="social-icons1_link w-inline-block"><div class="icon-embed-medium w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 36 36" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<rect width="36" height="36" rx="18" fill="currentColor" fill-opacity="0.1"/>
+<g clip-path="url(#clip0_29_4427)">
+<path d="M18.3204 17.28V19.4667H23.5471C23.3871 20.6933 22.9784 21.5913 22.3557 22.222C21.5911 22.9867 20.4004 23.822 18.3204 23.822C15.1024 23.822 12.5871 21.2267 12.5871 18.0087C12.5871 14.7907 15.1024 12.1953 18.3204 12.1953C20.0537 12.1953 21.3251 12.88 22.2584 13.76L23.7964 12.222C22.4984 10.96 20.7557 10 18.3204 10C13.9117 10 10.2051 13.5913 10.2051 18C10.2051 22.4087 13.9117 26 18.3204 26C20.7024 26 22.4984 25.218 23.9024 23.76C25.3424 22.32 25.7957 20.2847 25.7957 18.6487C25.7957 18.142 25.7604 17.6707 25.6804 17.28H18.3204Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_29_4427">
+<rect width="16" height="16" fill="currentColor" transform="translate(10 10)"/>
+</clipPath>
+</defs>
+</svg></div></a><a href="https://www.yelp.com/biz/premier-arts-dental-freehold-township" target="_blank" class="social-icons1_link w-inline-block"><div class="icon-embed-medium w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 36 36" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<rect width="36" height="36" rx="18" fill="currentColor" fill-opacity="0.1"/>
+<g clip-path="url(#clip0_29_365)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.3818 17.6388L16.1768 19.4891C16.9066 19.8453 16.7941 20.9186 16.0058 21.1151L11.9093 22.1366C11.3986 22.2641 10.8938 21.9116 10.8338 21.3881C10.7079 20.2936 10.8247 19.1848 11.1758 18.1406C11.2155 18.0235 11.2796 17.9162 11.364 17.8259C11.4484 17.7355 11.5511 17.6642 11.6652 17.6167C11.7793 17.5691 11.9022 17.5464 12.0258 17.5501C12.1494 17.5538 12.2707 17.5838 12.3818 17.6381M13.9013 25.4501L16.7258 22.3128C17.2688 21.7091 18.2701 22.1141 18.2408 22.9256L18.0938 27.1458C18.0896 27.2698 18.0589 27.3914 18.0038 27.5025C17.9487 27.6137 17.8704 27.7117 17.7743 27.7901C17.6782 27.8685 17.5665 27.9255 17.4466 27.9572C17.3266 27.9889 17.2013 27.9945 17.0791 27.9738C15.9939 27.7904 14.9617 27.3727 14.0543 26.7498C13.9522 26.6796 13.8663 26.5884 13.8023 26.4823C13.7383 26.3762 13.6977 26.2577 13.6832 26.1346C13.6687 26.0116 13.6807 25.8869 13.7183 25.7688C13.7559 25.6507 13.8183 25.5421 13.9013 25.4501ZM20.5981 21.2756L24.6128 22.5806C25.1123 22.7426 25.3561 23.3081 25.1303 23.7821C24.6559 24.7753 23.9708 25.6531 23.1226 26.3546C23.027 26.4337 22.9156 26.4914 22.7959 26.5239C22.6761 26.5565 22.5508 26.563 22.4284 26.5431C22.3059 26.5232 22.1891 26.4774 22.0859 26.4086C21.9826 26.3399 21.8952 26.2499 21.8296 26.1446L19.5916 22.5633C19.1611 21.8748 19.8256 21.0243 20.5981 21.2756ZM24.6811 18.7143L20.6228 19.8783C19.8421 20.1018 19.2076 19.2288 19.6613 18.5553L22.0231 15.0551C22.0921 14.9526 22.1822 14.866 22.2873 14.801C22.3924 14.7361 22.5102 14.6943 22.6327 14.6784C22.7553 14.6625 22.8798 14.6729 22.998 14.7089C23.1162 14.7448 23.2254 14.8056 23.3183 14.8871C24.1446 15.6159 24.8001 16.5178 25.2383 17.5286C25.2879 17.6423 25.3126 17.7652 25.3109 17.8892C25.3091 18.0132 25.281 18.1354 25.2282 18.2477C25.1755 18.3599 25.0994 18.4596 25.005 18.5401C24.9107 18.6205 24.8002 18.68 24.6811 18.7143ZM15.1981 8.86684C14.4676 9.06184 13.7708 9.32059 13.1116 9.63484C13.0034 9.68672 12.9072 9.76039 12.8289 9.85123C12.7507 9.94206 12.692 10.0481 12.6566 10.1627C12.6213 10.2773 12.61 10.3979 12.6235 10.5171C12.637 10.6362 12.675 10.7513 12.7351 10.8551L16.7018 17.7251C17.1466 18.4961 18.3248 18.1803 18.3248 17.2901V9.35734C18.3249 9.23744 18.3003 9.11881 18.2524 9.00889C18.2045 8.89897 18.1345 8.80013 18.0466 8.71858C17.9587 8.63703 17.8549 8.57452 17.7417 8.53499C17.6285 8.49545 17.5084 8.47974 17.3888 8.48884C16.6613 8.54659 15.9286 8.67109 15.1981 8.86684Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_29_365">
+<rect width="16" height="16" fill="currentColor" transform="translate(10 10)"/>
+</clipPath>
+</defs>
+</svg></div></a></div></div></div></div></div></div></div><div class="w-layout-grid footer1_menu-wrapper"><div class="footer1_link-column"><div class="margin-bottom margin-xsmall"><a href="/services" class="text-size-medium font-style-heading text-style-allcaps">Services</a></div><div class="footer1_link-list"><a href="/services/cosmetic-dentistry" class="footer1_link">Cosmetic Dentistry</a><a href="/services/endodontics" class="footer1_link">Endodontic Treatments</a><a href="/services/general-preventive" class="footer1_link">General &amp; Preventive Dentistry</a><a href="/services/orthodontics" class="footer1_link">Orthodontic Treatment</a><a href="/services/restorative" class="footer1_link">Restorative &amp; Prosthodontic Dentistry</a></div></div><div class="footer1_link-column"><div class="margin-bottom margin-xsmall"><div class="text-size-medium font-style-heading text-style-allcaps">Practice</div></div><div class="footer1_link-list"><a href="/about-us" class="footer1_link">About Us</a><a href="/about-us/dr-prachi-shah" class="footer1_link">Dr. Prachi Shah</a><a href="/technology" class="footer1_link">Technology</a><a href="/patient-information" class="footer1_link">Patient Information</a><a href="/patient-information/insurance-financing" class="footer1_link">Insurance &amp; Financing</a><a href="/blog" class="footer1_link">Blog</a></div></div><div class="footer1_link-column"><div class="margin-bottom margin-xsmall"><div class="text-size-medium font-style-heading text-style-allcaps">Contact</div></div><div class="footer1_link-list"><a href="tel:(732)702-2787" class="footer1_link">(732) 702-2787</a><a href="mailto:office@premierartsdental.com" class="footer1_link">office@premierartsdental.com</a><a href="https://maps.app.goo.gl/L1iTt7q7jNYHB8XF9" target="_blank" class="footer1_link">4400 U.S. 9 #3200<br/>Freehold Township, NJ 07728</a><div class="margin-top margin-xxsmall"><a href="https://dental4.me/premierartsdental/1" target="_blank" class="button is-small w-button">Book Appointment</a></div></div></div></div></div></div><div class="divider-horizontal"></div><div class="padding-top padding-medium"><div class="footer1_bottom-wrapper"><div class="footer1_credit-text">© <span class="year-span">2026</span> Premier Arts Dental. All rights reserved.</div><div class="w-layout-grid footer1_legal-list"><a href="/privacy-policy" class="footer1_legal-link">Privacy Policy</a><a href="/terms" class="footer1_legal-link">Terms of Use</a><a href="/accessibility" class="footer1_legal-link">Accessibility Statement </a></div><a aria-label="Lasso Logo" href="https://www.lassomd.com/" target="_blank" class="footer4_legal-link w-inline-block"><div class="lasso-logo w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 159 24" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+  <g clip-path="url(#clip0_10229_2239)">
+    <path d="M101.817 4H99.0227V19.8517H109.682V17.4848H101.816L101.817 4Z" fill="currentColor"/>
+    <path d="M120.17 9.76457C119.72 9.26909 119.166 8.87976 118.548 8.62476C117.896 8.36144 117.198 8.23004 116.495 8.23817C115.449 8.22051 114.417 8.47216 113.497 8.96895C112.629 9.44373 111.913 10.1559 111.434 11.0224C110.946 11.9797 110.692 13.0387 110.692 14.1131C110.692 15.1874 110.946 16.2464 111.434 17.2037C111.91 18.0746 112.626 18.7907 113.497 19.2671C114.417 19.764 115.449 20.0157 116.495 19.9979C117.235 20.0072 117.97 19.8684 118.656 19.5897C119.297 19.325 119.862 18.9037 120.299 18.3643V19.8491H122.857V8.3687H120.171L120.17 9.76457ZM119.246 16.709C118.928 17.0347 118.546 17.2909 118.125 17.4612C117.703 17.6315 117.25 17.7123 116.796 17.6983C116.343 17.7129 115.891 17.6324 115.471 17.462C115.051 17.2916 114.672 17.0351 114.357 16.709C113.739 15.9829 113.4 15.0608 113.4 14.1076C113.4 13.1545 113.739 12.2324 114.357 11.5063C114.672 11.1804 115.051 10.9241 115.472 10.7538C115.892 10.5836 116.343 10.5032 116.796 10.5178C117.25 10.5038 117.703 10.5845 118.124 10.7546C118.546 10.9248 118.928 11.1808 119.246 11.5063C119.87 12.2292 120.213 13.1525 120.213 14.1076C120.213 15.0628 119.87 15.9861 119.246 16.709Z" fill="currentColor"/>
+    <path d="M132.39 13.6146C131.651 13.3946 130.897 13.2293 130.134 13.1199C129.442 13.0202 128.761 12.8509 128.103 12.6144C127.909 12.5541 127.74 12.4321 127.622 12.2671C127.504 12.1021 127.442 11.9029 127.447 11.6999C127.452 11.5024 127.512 11.31 127.62 11.1447C127.728 10.9794 127.881 10.8478 128.06 10.7646C128.618 10.4956 129.235 10.3734 129.854 10.4096C131.008 10.3929 132.144 10.69 133.142 11.2693L134.173 9.22658C133.57 8.88718 132.917 8.64426 132.238 8.50662C131.463 8.32899 130.67 8.23892 129.875 8.23809C128.574 8.16959 127.285 8.5119 126.189 9.21661C125.76 9.50179 125.41 9.89075 125.171 10.3474C124.933 10.8041 124.814 11.3136 124.824 11.8288C124.782 12.5379 125.017 13.2357 125.48 13.7742C125.901 14.2306 126.435 14.5681 127.028 14.7527C127.785 14.9747 128.557 15.14 129.339 15.2474C130.007 15.335 130.665 15.4861 131.305 15.6988C131.486 15.7508 131.644 15.8614 131.755 16.0133C131.866 16.1652 131.923 16.3497 131.918 16.5377C131.918 17.3834 131.114 17.8063 129.507 17.8063C128.784 17.8033 128.064 17.6983 127.369 17.4946C126.71 17.315 126.083 17.0346 125.51 16.6632L124.479 18.7059C125.13 19.1327 125.85 19.4453 126.606 19.6304C127.495 19.8742 128.413 19.9972 129.335 19.9962C130.672 20.0677 131.999 19.7302 133.139 19.0284C133.573 18.7548 133.93 18.374 134.175 17.9227C134.419 17.4713 134.544 16.9646 134.536 16.4512C134.581 15.7617 134.353 15.0823 133.902 14.559C133.487 14.1202 132.967 13.7951 132.39 13.6146Z" fill="currentColor"/>
+    <path d="M143.566 13.6146C142.827 13.3946 142.073 13.2293 141.31 13.1199C140.618 13.0203 139.937 12.8509 139.279 12.6144C139.085 12.5541 138.916 12.4322 138.798 12.2671C138.68 12.1021 138.618 11.903 138.623 11.6999C138.628 11.5024 138.688 11.3101 138.796 11.1448C138.904 10.9795 139.057 10.8478 139.236 10.7646C139.794 10.4956 140.412 10.3735 141.03 10.4096C142.184 10.3928 143.321 10.6899 144.319 11.2693L145.35 9.2266C144.747 8.88726 144.094 8.64434 143.416 8.50663C142.64 8.32894 141.847 8.23887 141.052 8.2381C139.751 8.16954 138.462 8.51186 137.366 9.21662C136.937 9.5018 136.587 9.89077 136.348 10.3474C136.11 10.8041 135.99 11.3136 136.001 11.8288C135.959 12.5379 136.194 13.2358 136.657 13.7742C137.078 14.2304 137.612 14.5679 138.205 14.7527C138.961 14.9747 139.734 15.14 140.515 15.2474C141.183 15.335 141.842 15.4861 142.481 15.6988C142.662 15.7509 142.82 15.8616 142.931 16.0134C143.042 16.1653 143.099 16.3497 143.094 16.5377C143.094 17.3835 142.29 17.8063 140.684 17.8063C139.96 17.8033 139.24 17.6983 138.545 17.4946C137.886 17.315 137.259 17.0345 136.686 16.6632L135.655 18.7059C136.306 19.1327 137.026 19.4454 137.782 19.6304C138.671 19.8742 139.59 19.9972 140.512 19.9962C141.848 20.0677 143.175 19.7301 144.315 19.0285C144.75 18.7548 145.106 18.374 145.351 17.9227C145.595 17.4713 145.72 16.9646 145.712 16.4512C145.757 15.7618 145.529 15.0824 145.078 14.559C144.663 14.1203 144.143 13.7952 143.566 13.6146Z" fill="currentColor"/>
+    <path d="M158.215 11.0777C157.696 10.1932 156.941 9.47104 156.034 8.99264C155.058 8.498 153.979 8.24023 152.885 8.24023C151.792 8.24023 150.713 8.498 149.737 8.99264C148.83 9.47093 148.074 10.1931 147.556 11.0777C147.041 12.0071 146.771 13.052 146.771 14.1143C146.771 15.1766 147.041 16.2215 147.556 17.1509C148.072 18.0402 148.828 18.7665 149.737 19.2468C150.713 19.7415 151.791 19.9993 152.885 19.9993C153.979 19.9993 155.058 19.7415 156.034 19.2468C156.943 18.7665 157.699 18.0402 158.215 17.1509C158.73 16.2216 159 15.1767 159 14.1143C159 13.0519 158.73 12.007 158.215 11.0777ZM155.325 16.7103C155.007 17.036 154.626 17.2921 154.204 17.4624C153.782 17.6328 153.33 17.7135 152.875 17.6996C152.422 17.7142 151.971 17.6337 151.551 17.4633C151.131 17.2929 150.751 17.0364 150.436 16.7103C149.819 15.9841 149.48 15.0621 149.48 14.1089C149.48 13.1557 149.819 12.2336 150.436 11.5075C150.751 11.1816 151.131 10.9253 151.551 10.7551C151.971 10.5848 152.422 10.5044 152.875 10.519C153.33 10.5051 153.782 10.5858 154.204 10.7559C154.626 10.9261 155.007 11.182 155.325 11.5075C155.949 12.2306 156.292 13.1538 156.292 14.1089C156.292 15.064 155.949 15.9872 155.325 16.7103Z" fill="currentColor"/>
+    <path opacity="0.5" d="M85.0277 24H70.9771C71.6111 24.0001 72.2358 23.8472 72.7981 23.5542C73.3605 23.2613 73.8439 22.837 74.2074 22.3173L79.0275 15.4277V17.9992C79.0275 18.7873 79.1827 19.5678 79.4843 20.296C79.7858 21.0241 80.2278 21.6857 80.785 22.243C81.3422 22.8002 82.0037 23.2422 82.7316 23.5437C83.4596 23.8452 84.2398 24.0002 85.0277 24Z" fill="currentColor"/>
+    <path opacity="0.9" d="M79.03 6V15.4286L74.2099 22.3181C73.7291 23.0061 73.0416 23.5227 72.2472 23.7929C71.4527 24.0631 70.5929 24.0727 69.7926 23.8204C68.9924 23.5681 68.2934 23.067 67.7974 22.39C67.3013 21.713 67.0341 20.8954 67.0345 20.056V1.19967C67.0345 0.881496 67.1609 0.576356 67.3858 0.351375C67.6107 0.126393 67.9157 5.76193e-08 68.2338 5.76193e-08H73.0323C73.8199 -0.000109146 74.5999 0.155011 75.3276 0.4565C76.0554 0.75799 76.7166 1.19994 77.2735 1.75712C77.8305 2.31429 78.2723 2.97577 78.5737 3.70377C78.875 4.43177 79.0301 5.21204 79.03 6Z" fill="currentColor"/>
+    <path opacity="0.7" d="M91.0255 18V22.8003C91.0255 23.1185 90.8991 23.4236 90.6742 23.6486C90.4493 23.8736 90.1443 24 89.8263 24H85.0278C83.4371 23.9998 81.9117 23.3676 80.787 22.2424C79.6622 21.1172 79.0302 19.5912 79.03 18V15.4269L79.3625 14.948C80.0001 14.037 80.848 13.2933 81.8343 12.7801C82.8205 12.2669 83.916 11.9993 85.0278 12C85.8154 11.9999 86.5954 12.155 87.3231 12.4565C88.0508 12.758 88.7121 13.1999 89.269 13.7571C89.826 14.3143 90.2678 14.9758 90.5692 15.7038C90.8705 16.4318 91.0256 17.212 91.0255 18Z" fill="currentColor"/>
+    <path d="M4.58495 9.08741C4.8345 9.30023 5.03177 9.56764 5.16147 9.86894C5.29117 10.1702 5.34979 10.4974 5.33287 10.825C5.34912 11.1511 5.29011 11.4765 5.16041 11.7761C5.0307 12.0757 4.83381 12.3414 4.58495 12.5526C3.99027 13.0001 3.25602 13.222 2.51309 13.1786H0.511083V15.4715H0.000854492V8.46139H2.51309C3.25601 8.41805 3.99023 8.63989 4.58495 9.08741ZM4.22425 12.2267C4.42358 12.054 4.58054 11.8378 4.683 11.5947C4.78546 11.3517 4.83067 11.0883 4.81513 10.825C4.83031 10.561 4.785 10.297 4.68259 10.0532C4.58018 9.80937 4.42339 9.59222 4.22425 9.4183C3.73026 9.05524 3.12389 8.87856 2.51228 8.91948H0.510272V12.7147H2.51228C3.1224 12.7571 3.7281 12.5844 4.22425 12.2267Z" fill="currentColor"/>
+    <path d="M7.57594 15.171C7.18273 14.948 6.85885 14.6206 6.64017 14.2249C6.40991 13.8066 6.29275 13.3355 6.30027 12.8581C6.29275 12.3807 6.40991 11.9096 6.64017 11.4913C6.85899 11.0957 7.18283 10.7683 7.57594 10.5452C7.98342 10.3154 8.44454 10.1978 8.91228 10.2044C9.38001 10.1978 9.84109 10.3154 10.2486 10.5452C10.6416 10.7684 10.9655 11.0958 11.1844 11.4913C11.4149 11.9095 11.5324 12.3806 11.5251 12.8581C11.5324 13.3356 11.4149 13.8067 11.1844 14.2249C10.9656 14.6205 10.6418 14.948 10.2486 15.171C9.84111 15.4008 9.38002 15.5184 8.91228 15.5118C8.44453 15.5185 7.98339 15.4009 7.57594 15.171ZM9.986 14.7802C10.3019 14.5929 10.5606 14.3226 10.7339 13.9987C10.9216 13.648 11.0163 13.255 11.009 12.8573C11.0162 12.4598 10.9215 12.0671 10.7339 11.7166C10.5605 11.3928 10.3019 11.1225 9.986 10.9351C9.65937 10.7457 9.28729 10.6488 8.90977 10.655C8.53224 10.6488 8.16019 10.7457 7.83357 10.9351C7.51768 11.1225 7.25901 11.3928 7.0856 11.7166C6.89791 12.0674 6.80321 12.4603 6.81052 12.8581C6.80321 13.2558 6.89791 13.6488 7.0856 13.9996C7.25894 14.3235 7.51762 14.5937 7.83357 14.7811C8.16019 14.9705 8.53224 15.0674 8.90977 15.0612C9.28729 15.0674 9.65937 14.9697 9.986 14.7802Z" fill="currentColor"/>
+    <path d="M20.3908 10.2441L18.4088 15.4718H17.9384L16.1765 10.9358L14.4047 15.4718H13.9444L11.9623 10.2441H12.4426L14.1879 14.9106L15.9696 10.2441H16.4001L18.1719 14.8998L19.9337 10.2441H20.3908Z" fill="currentColor"/>
+    <path d="M25.8159 12.9781H21.3215C21.3278 13.3612 21.4347 13.7359 21.6315 14.0647C21.8208 14.3777 22.0929 14.6323 22.4177 14.8004C22.7627 14.9775 23.1461 15.0669 23.5338 15.0606C23.8584 15.0636 24.1801 15.0006 24.4795 14.8752C24.7631 14.7566 25.0125 14.5688 25.205 14.329L25.4951 14.6616C25.2648 14.9379 24.9711 15.1544 24.6391 15.2926C24.2859 15.4413 23.9061 15.5163 23.523 15.5129C23.0376 15.5215 22.5583 15.4041 22.1318 15.172C21.7325 14.9527 21.4017 14.6269 21.1761 14.2309C20.9412 13.8125 20.8218 13.339 20.8304 12.8592C20.8226 12.3836 20.9344 11.9136 21.1553 11.4924C21.361 11.1004 21.6711 10.773 22.0512 10.5463C22.439 10.3172 22.8823 10.1992 23.3327 10.2054C23.7805 10.1978 24.222 10.3127 24.6092 10.538C24.9866 10.7621 25.2949 11.086 25.5001 11.4741C25.7213 11.8934 25.8331 12.3618 25.825 12.8359L25.8159 12.9781ZM22.3421 10.8905C22.0492 11.0533 21.8055 11.2919 21.6365 11.5814C21.4569 11.8879 21.3523 12.2326 21.3315 12.5873H25.3355C25.321 12.2348 25.2178 11.8917 25.0355 11.5897C24.8617 11.3023 24.617 11.0644 24.325 10.8988C24.0221 10.7299 23.6802 10.6439 23.3335 10.6494C22.9881 10.6429 22.646 10.726 22.3421 10.8905Z" fill="currentColor"/>
+    <path d="M28.609 10.5065C28.9873 10.2933 29.4167 10.1878 29.8506 10.2014V10.6919L29.7301 10.6819C29.4772 10.668 29.2243 10.7096 28.9891 10.8038C28.754 10.898 28.5423 11.0426 28.3688 11.2273C28.0205 11.6533 27.8454 12.1951 27.8785 12.7445V15.4681H27.3799V10.2438H27.8602V11.3852C28.0073 11.0184 28.2702 10.7098 28.609 10.5065Z" fill="currentColor"/>
+    <path d="M35.5958 12.9781H31.1014C31.1076 13.3612 31.2145 13.736 31.4114 14.0647C31.6004 14.3776 31.8722 14.6322 32.1968 14.8004C32.5418 14.9775 32.9251 15.0668 33.3129 15.0606C33.6374 15.0637 33.9592 15.0006 34.2586 14.8752C34.5422 14.7566 34.7916 14.5688 34.9841 14.329L35.2742 14.6616C35.0439 14.9379 34.7502 15.1544 34.4182 15.2926C34.065 15.4413 33.6852 15.5163 33.3021 15.5129C32.8167 15.5215 32.3374 15.4041 31.9109 15.172C31.5115 14.9527 31.1808 14.6269 30.9552 14.2309C30.7202 13.8125 30.6008 13.339 30.6094 12.8592C30.602 12.3835 30.714 11.9135 30.9352 11.4924C31.1409 11.1004 31.451 10.773 31.8311 10.5463C32.2189 10.3171 32.6622 10.1992 33.1126 10.2054C33.5604 10.1978 34.0019 10.3127 34.3891 10.538C34.7664 10.7622 35.0747 11.0861 35.28 11.4741C35.5012 11.8934 35.613 12.3618 35.6049 12.8359L35.5958 12.9781ZM32.122 10.8905C31.8291 11.0533 31.5854 11.292 31.4164 11.5814C31.2368 11.8879 31.1322 12.2326 31.1114 12.5873H35.1154C35.1009 12.2348 34.9977 11.8917 34.8154 11.5897C34.6416 11.3023 34.3969 11.0644 34.1049 10.8988C33.8023 10.73 33.4606 10.644 33.1143 10.6494C32.7685 10.6428 32.427 10.7259 32.1228 10.8905H32.122Z" fill="currentColor"/>
+    <path d="M41.8021 8.04102V15.4718H41.3117V14.2397C41.1191 14.6315 40.8164 14.9585 40.4408 15.1808C40.055 15.4051 39.6154 15.5201 39.1693 15.5134C38.7063 15.5196 38.2501 15.4019 37.8479 15.1725C37.4585 14.9501 37.1381 14.6244 36.9221 14.2314C36.6945 13.8106 36.58 13.338 36.5897 12.8596C36.5804 12.3798 36.6949 11.9056 36.9221 11.4829C37.1364 11.0885 37.4572 10.7624 37.8479 10.5418C38.2515 10.3167 38.7073 10.202 39.1693 10.2092C39.6107 10.2029 40.0453 10.3179 40.4258 10.5418C40.7967 10.7627 41.0998 11.0813 41.3018 11.4629V8.04102H41.8021ZM40.2754 14.7801C40.5913 14.5927 40.85 14.3225 41.0234 13.9986C41.2111 13.6479 41.3058 13.2549 41.2984 12.8571C41.3058 12.4594 41.2111 12.0664 41.0234 11.7157C40.85 11.3918 40.5913 11.1216 40.2754 10.9342C39.9488 10.7447 39.5767 10.6478 39.1992 10.654C38.8217 10.6478 38.4496 10.7447 38.123 10.9342C37.807 11.1215 37.5484 11.3918 37.375 11.7157C37.1873 12.0664 37.0926 12.4594 37.0999 12.8571C37.0926 13.2549 37.1873 13.6479 37.375 13.9986C37.5483 14.3226 37.807 14.5928 38.123 14.7801C38.4496 14.9696 38.8217 15.0664 39.1992 15.0603C39.577 15.0666 39.9494 14.9697 40.2762 14.7801H40.2754Z" fill="currentColor"/>
+    <path d="M50.4309 10.5393C50.8215 10.7601 51.1423 11.0861 51.3567 11.4804C51.5838 11.9032 51.6983 12.3773 51.6891 12.8571C51.6987 13.3355 51.5842 13.8081 51.3567 14.2289C51.1405 14.6218 50.8201 14.9475 50.4309 15.17C50.0287 15.3994 49.5725 15.5171 49.1095 15.5109C48.6649 15.5178 48.2269 15.4028 47.843 15.1783C47.4675 14.9565 47.1636 14.6316 46.967 14.2422V15.4743H46.4867V8.04102H46.9853V11.4355C47.1838 11.0555 47.4865 10.74 47.8579 10.526C48.2384 10.3073 48.6707 10.195 49.1095 10.2009C49.5721 10.1955 50.0278 10.3122 50.4309 10.5393ZM50.1608 14.7793C50.4798 14.5935 50.7413 14.323 50.9162 13.9978C51.1039 13.6471 51.1986 13.2541 51.1913 12.8563C51.1986 12.4586 51.1039 12.0656 50.9162 11.7148C50.7412 11.3897 50.4798 11.1192 50.1608 10.9334C49.8324 10.7445 49.4592 10.6477 49.0804 10.6532C48.7029 10.647 48.3308 10.7439 48.0042 10.9334C47.6883 11.1207 47.4296 11.3909 47.2563 11.7148C47.0681 12.0646 46.9726 12.4567 46.9787 12.8538C46.9714 13.2516 47.0661 13.6446 47.2538 13.9953C47.427 14.3192 47.6857 14.5895 48.0017 14.7768C48.3283 14.9663 48.7004 15.0631 49.0779 15.0569C49.4572 15.0639 49.8314 14.9674 50.1608 14.7793Z" fill="currentColor"/>
+    <path d="M57.2879 10.2441L54.6053 16.1826C54.4625 16.5647 54.2228 16.9031 53.9097 17.1645C53.6377 17.3606 53.3091 17.4624 52.9739 17.4546C52.7432 17.4562 52.5142 17.4154 52.2983 17.3341C52.0957 17.2589 51.9128 17.139 51.7631 16.9832L52.0124 16.6025C52.1368 16.7346 52.2874 16.8394 52.4545 16.9101C52.6216 16.9808 52.8016 17.0159 52.9831 17.0132C53.2176 17.0194 53.4472 16.9452 53.6338 16.8028C53.8543 16.6051 54.0252 16.3582 54.1324 16.082L54.4125 15.451L52.0598 10.2441H52.59L54.6826 14.9248L56.7743 10.2483L57.2879 10.2441Z" fill="currentColor"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_10229_2239">
+      <rect width="159" height="24" fill="white"/>
+    </clipPath>
+  </defs>
+</svg></div></a></div></div></div></div></div></footer></div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6a29d43f03b10014aa9b0c8c" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<!-- End Google Tag Manager --><script>
+window.addEventListener("DOMContentLoaded", init);
+
+function init() {
+  const MAX_TILT = 14; // max degrees of 3D rotation
+
+  document.querySelectorAll(".feature-wrapper-2").forEach((wrapper, index) => {
+    const number = wrapper.querySelector(".text-number");
+    const bgDiv = wrapper.querySelector(".bg-color-div");
+    const image = wrapper.querySelector(".feature-image");
+    const imageWrap = wrapper.querySelector(".feature-image-wrapper-2");
+
+    if (!number || !bgDiv || !image || !imageWrap) return;
+
+    // Use a ternary operator on the index (0 is the 1st text, 1 is the 2nd text)
+    const hoverColor = index === 0 ? "#B1D7FE" : "#B7E6BE"; // Blue for 1st, Green for 2nd
+
+    // ── Hover timeline (straighten bg + zoom image) ──
+    const hoverTl = gsap.timeline({
+      paused: true,
+      defaults: { duration: 0.8, ease: "power2.inOut" },
+    });
+
+    hoverTl
+      .to(number, { color: hoverColor }, 0)
+      .to(bgDiv, { rotate: 0, scaleY: 1.06 }, 0)
+      .to(image, { scale: 1.05 }, 0);
+
+    // ── Mouse move: 3D tilt on the image wrap ──
+    imageWrap.addEventListener("mousemove", (e) => {
+      const rect = image.getBoundingClientRect();
+      // Normalise cursor position to -1 ... +1 within the image card
+      const xNorm = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      const yNorm = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+
+      // rotateY tilts left/right, rotateX tilts up/down (inverted so it
+      // feels like the surface is following the cursor, not turning away)
+      gsap.to(imageWrap, {
+        rotateY: xNorm * MAX_TILT,
+        rotateX: -yNorm * MAX_TILT,
+        duration: 0.4,
+        ease: "power2.out",
+      });
+    });
+
+    // ── Enter: play hover timeline ──
+    wrapper.addEventListener("mouseenter", () => hoverTl.play());
+
+    // ── Leave: reverse tilt AND hover timeline ──
+    wrapper.addEventListener("mouseleave", () => {
+      hoverTl.reverse();
+      gsap.to(imageWrap, {
+        rotateX: 0,
+        rotateY: 0,
+        duration: 0.6,
+        ease: "power3.out",
+      });
+    });
+  });
+}
+
+</script>

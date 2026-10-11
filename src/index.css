@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+:root {
+  --_typography---font-styles--body: 'Noto Sans Georgian', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --_typography---font-styles--heading: 'Noto Sans Georgian', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--_typography---font-styles--body);
+  color: #1a202c;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Georgian headings & text */
+.heading-style-h1 {
+  font-family: var(--_typography---font-styles--heading);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+}
+
+.heading-style-h2, .heading-style-h3, .heading-style-h5, .heading-style-h6, .font-style-heading {
+  font-family: var(--_typography---font-styles--heading);
+  letter-spacing: -0.01em;
+}
+
+/* 1. NAVBAR & LOGO FIXES */
+.navbar1_logo-link {
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  background: transparent !important;
+}
+
+.navbar1_logo {
+  height: 2.75rem !important;
+  max-height: 2.75rem !important;
+  width: auto !important;
+  max-width: 8rem !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  border-radius: 0.5rem !important;
+  display: block !important;
+  background-color: transparent !important;
+  mix-blend-mode: multiply !important;
+}
+
+/* Remove underlines from all navigation menu items */
+.navbar1_component a,
+.navbar1_menu a,
+.navbar1_menu-links a,
+.navbar6_link,
+.navbar11_dropdown-toggle,
+.navbar11_dropdown-link,
+.navbar1_dropdown-link,
+.navbar_dropdown-link {
+  text-decoration: none !important;
+}
+
+.navbar1_component a:hover,
+.navbar1_menu a:hover,
+.navbar1_menu-links a:hover,
+.navbar6_link:hover,
+.navbar11_dropdown-toggle:hover,
+.navbar11_dropdown-link:hover,
+.navbar1_dropdown-link:hover,
+.navbar_dropdown-link:hover {
+  text-decoration: none !important;
+}
+
+/* Sleek, refined floating language toggle */
+.lang-switch-wrap {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(17, 37, 71, 0.14) !important;
+  border-radius: 9999px !important;
+  padding: 3px !important;
+  gap: 2px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.lang-btn {
+  padding: 4px 10px !important;
+  border-radius: 9999px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  color: #1e3a5f !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+}
+
+.lang-btn:hover {
+  color: #0c4068 !important;
+  text-decoration: none !important;
+}
+
+.lang-btn.active {
+  background-color: #437b60 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(67, 123, 96, 0.25) !important;
+}
+
+/* 2. HERO SECTION - BOTTOM OVERLAY CARDS ("პროფესიონალიზმი" & "შეფასებები") */
+.header76_grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  grid-column-gap: 1.25rem !important;
+  grid-row-gap: 1rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media screen and (max-width: 767px) {
+  .header76_grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+.header76_card,
+.heeader76_card {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 1.25rem !important;
+  border-radius: 1.25rem !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.header76_card .header76_text-wrapper,
+.heeader76_card .header76_text-wrapper {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  word-break: break-word !important;
+}
+
+.hero-overlay-card-text {
+  font-size: 0.875rem !important; /* text-sm */
+  line-height: 1.4 !important;    /* line-height: 1.4 */
+  color: rgba(255, 255, 255, 0.85) !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* 3. HERO SECTION - IMAGE MARQUEE LOOP (UNINTERRUPTED LINEAR INFINITE, NO HOVER PAUSE) */
+@keyframes scrollUp {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0%); }
+}
+
+.header76_image-list {
+  animation: scrollUp 28s linear infinite !important;
+  animation-timing-function: linear !important;
+  animation-iteration-count: infinite !important;
+  animation-play-state: running !important;
+  will-change: transform !important;
+}
+
+.header76_image-list-right .header76_image-list {
+  animation: scrollDown 28s linear infinite !important;
+  animation-timing-function: linear !important;
+  animation-iteration-count: infinite !important;
+  animation-play-state: running !important;
+  will-change: transform !important;
+}
+
+/* Explicitly forbid any animation pauses */
+.header76_image-list:hover,
+.header76_image-list-right .header76_image-list:hover,
+.header76_images-layout:hover .header76_image-list {
+  animation-play-state: running !important;
+}
+
+/* Ensure hero background video covers properly */
+.brand-video {
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.header76_background-video {
+  opacity: 0.8 !important;
+  border-radius: 1.5rem !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  inset: 0% !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Sliders and accordions */
+.testimonial8_mask {
+  display: flex !important;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.testimonial8_slide {
+  flex-shrink: 0;
+  min-width: 320px;
+  scroll-snap-align: start;
+}
+
+.w-dropdown-list.w--open {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.faq4_answer {
+  transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Premier Arts Dental",
+  "description": "Where advanced dentistry meets genuine warmth. Comprehensive dental care by Dr. Prachi Shah, DMD in Freehold, NJ.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
