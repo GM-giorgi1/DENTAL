@@ -8,9 +8,13 @@ import HERO5 from '../Images/HERO5.jpg';
 import HERO6 from '../Images/hero6.jpg';
 import HERO7 from '../Images/HERO7.jpeg';
 import HERO8 from '../Images/HERO8.jpg';
-import welcomeSectionHtml from './welcome_section.html?raw';
-import afterReviewsHtml from './after_reviews.html?raw';
+import aboutFeaturesHtml from './about_features.html?raw';
+import { FounderSection } from './components/FounderSection';
 import { ReviewsCarousel } from './components/ReviewsCarousel';
+import { ProjectsSection } from './components/ProjectsSection';
+import { PhilosophyTimeline } from './components/PhilosophyTimeline';
+import { BookingSection } from './components/BookingSection';
+import { Footer } from './components/Footer';
 
 declare global {
   interface Window {
@@ -36,11 +40,6 @@ export default function App() {
   const [submitted, setSubmitted] = useState(false);
 
   const restContainerRef = useRef<HTMLDivElement>(null);
-
-  // Replace HERO7 placeholder in welcomeSectionHtml
-  const processedWelcomeHtml = useMemo(() => {
-    return welcomeSectionHtml.replace(/__HERO7_IMG__/g, HERO7);
-  }, []);
 
   // Close dropdowns on click outside
   useEffect(() => {
@@ -176,7 +175,7 @@ export default function App() {
         });
       }
     });
-  }, [processedWelcomeHtml, afterReviewsHtml]);
+  }, [aboutFeaturesHtml]);
 
   const handleBookingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -564,13 +563,13 @@ export default function App() {
               <div className="margin-top margin-medium w-full max-w-full">
                 <div className="header76_grid w-full max-w-full">
                   {/* Card 1: პროფესიონალიზმი */}
-                  <div className="header76_card heeader76_card flex flex-col justify-between w-full max-w-full min-w-0 p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white overflow-hidden shadow-lg">
-                    <div className="max-w-full min-w-0">
-                      <div className="icon-embed-medium w-embed text-white/90 mb-2.5">
+                  <div className="header76_card heeader76_card flex flex-col justify-between w-full h-full p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-lg">
+                    <div className="min-w-0">
+                      <div className="icon-embed-medium w-embed text-white/90 mb-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="36"
-                          height="38"
+                          width="32"
+                          height="34"
                           viewBox="0 0 36 38"
                           fill="none"
                           preserveAspectRatio="xMidYMid meet"
@@ -587,21 +586,21 @@ export default function App() {
                           />
                         </svg>
                       </div>
-                      <div className="header76_text-wrapper max-w-full min-w-0">
-                        <div className="text-base sm:text-lg font-bold font-style-heading text-white tracking-tight mb-1">
+                      <div className="header76_text-wrapper min-w-0">
+                        <h4 className="text-base sm:text-lg font-bold font-style-heading text-white tracking-tight mb-1 whitespace-nowrap header76_card-title">
                           {lang === 'geo' ? 'პროფესიონალიზმი' : 'Professionalism'}
-                        </div>
-                        <div className="hero-overlay-card-text text-sm leading-[1.4] text-white/85 break-words">
+                        </h4>
+                        <div className="hero-overlay-card-text text-xs sm:text-sm leading-[1.4] text-white/85">
                           {lang === 'geo'
-                            ? 'ინდივიდუალური მიდგომა და მკურნალობის გამჭვირვალე გეგმა თითოეული პაციენტისთვის.'
-                            : 'Individual approach and transparent treatment plan for each patient.'}
+                            ? 'ინდივიდუალური მიდგომა და მკურნალობის გამჭვირვალე გეგმა.'
+                            : 'Individual approach and transparent treatment plan.'}
                         </div>
                       </div>
                     </div>
-                    <div className="button-group mt-3.5">
+                    <div className="button-group mt-3 pt-2 border-t border-white/10">
                       <a
-                        href="#about"
-                        className="button is-link is-icon is-alternate w-inline-block no-underline"
+                        href="#principles"
+                        className="button is-link is-icon is-alternate w-inline-block no-underline text-xs"
                         style={{ textDecoration: 'none' }}
                       >
                         <div>{lang === 'geo' ? 'გაიგეთ მეტი' : 'Read More'}</div>
@@ -630,13 +629,13 @@ export default function App() {
                   </div>
 
                   {/* Card 2: პაციენტების შეფასებები */}
-                  <div className="header76_card heeader76_card flex flex-col justify-between w-full max-w-full min-w-0 p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white overflow-hidden shadow-lg">
-                    <div className="max-w-full min-w-0">
-                      <div className="icon-embed-medium w-embed text-white/90 mb-2.5">
+                  <div className="header76_card heeader76_card flex flex-col justify-between w-full h-full p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-lg">
+                    <div className="min-w-0">
+                      <div className="icon-embed-medium w-embed text-white/90 mb-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="36"
-                          height="38"
+                          width="32"
+                          height="34"
                           viewBox="0 0 36 38"
                           fill="none"
                           preserveAspectRatio="xMidYMid meet"
@@ -653,43 +652,45 @@ export default function App() {
                           />
                         </svg>
                       </div>
-                      <div className="header76_text-wrapper max-w-full min-w-0">
-                        <div className="text-base sm:text-lg font-bold font-style-heading text-white tracking-tight mb-1">
-                          {lang === 'geo' ? 'პაციენტების შეფასებები' : 'Patient Reviews'}
-                        </div>
-                        <div className="header76_ratings-wrapper my-1 flex items-center gap-1.5">
-                          <div className="header76_ratings-wrap flex items-center gap-0.5">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                              <div key={star} className="icon-embed-xxsmall w-embed">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="12"
-                                  height="12"
-                                  viewBox="0 0 12 12"
-                                  fill="none"
-                                >
-                                  <path
-                                    d="M5.42958 1.75625C5.60958 1.20365 6.39138 1.20365 6.57078 1.75625L7.21278 3.73145C7.252 3.85174 7.32825 3.95655 7.43062 4.03091C7.533 4.10526 7.65625 4.14535 7.78278 4.14545H9.85998C10.4414 4.14545 10.6826 4.88945 10.2128 5.23145L8.53278 6.45185C8.4302 6.52626 8.35381 6.63125 8.31458 6.75176C8.27535 6.87226 8.27528 7.0021 8.31438 7.12265L8.95638 9.09785C9.13638 9.65045 8.50338 10.1106 8.03238 9.76865L6.35238 8.54825C6.2499 8.47385 6.12652 8.43378 5.99988 8.43378C5.87324 8.43378 5.74986 8.47385 5.64738 8.54825L3.96738 9.76865C3.49698 10.1106 2.86458 9.65045 3.04398 9.09785L3.68598 7.12265C3.72508 7.0021 3.72501 6.87226 3.68578 6.75176C3.64655 6.63125 3.57016 6.52626 3.46758 6.45185L1.78818 5.23205C1.31838 4.89005 1.56018 4.14605 2.14098 4.14605H4.21758C4.34421 4.14608 4.4676 4.10605 4.57009 4.03169C4.67259 3.95732 4.74893 3.85244 4.78818 3.73205L5.43018 1.75685L5.42958 1.75625Z"
-                                    fill="#FFD230"
-                                  />
-                                </svg>
-                              </div>
-                            ))}
+                      <div className="header76_text-wrapper min-w-0">
+                        <div className="flex items-center justify-between gap-2 mb-1">
+                          <h4 className="text-base sm:text-lg font-bold font-style-heading text-white tracking-tight whitespace-nowrap header76_card-title">
+                            {lang === 'geo' ? 'შეფასებები' : 'Reviews'}
+                          </h4>
+                          <div className="header76_ratings-wrapper flex items-center gap-1 shrink-0">
+                            <div className="header76_ratings-wrap flex items-center gap-0.5">
+                              {[1, 2, 3, 4, 5].map((star) => (
+                                <div key={star} className="icon-embed-xxsmall w-embed">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="10"
+                                    height="10"
+                                    viewBox="0 0 12 12"
+                                    fill="none"
+                                  >
+                                    <path
+                                      d="M5.42958 1.75625C5.60958 1.20365 6.39138 1.20365 6.57078 1.75625L7.21278 3.73145C7.252 3.85174 7.32825 3.95655 7.43062 4.03091C7.533 4.10526 7.65625 4.14535 7.78278 4.14545H9.85998C10.4414 4.14545 10.6826 4.88945 10.2128 5.23145L8.53278 6.45185C8.4302 6.52626 8.35381 6.63125 8.31458 6.75176C8.27535 6.87226 8.27528 7.0021 8.31438 7.12265L8.95638 9.09785C9.13638 9.65045 8.50338 10.1106 8.03238 9.76865L6.35238 8.54825C6.2499 8.47385 6.12652 8.43378 5.99988 8.43378C5.87324 8.43378 5.74986 8.47385 5.64738 8.54825L3.96738 9.76865C3.49698 10.1106 2.86458 9.65045 3.04398 9.09785L3.68598 7.12265C3.72508 7.0021 3.72501 6.87226 3.68578 6.75176C3.64655 6.63125 3.57016 6.52626 3.46758 6.45185L1.78818 5.23205C1.31838 4.89005 1.56018 4.14605 2.14098 4.14605H4.21758C4.34421 4.14608 4.4676 4.10605 4.57009 4.03169C4.67259 3.95732 4.74893 3.85244 4.78818 3.73205L5.43018 1.75685L5.42958 1.75625Z"
+                                      fill="#FFD230"
+                                    />
+                                  </svg>
+                                </div>
+                              ))}
+                            </div>
+                            <span className="font-bold text-white text-xs">5.0</span>
                           </div>
-                          <div className="font-bold text-white text-sm">5.0</div>
                         </div>
-                        <div className="hero-overlay-card-text text-sm leading-[1.4] text-white/85 break-words">
-                          {lang === 'geo' ? 'უმაღლესი ნდობა და კომფორტი' : 'Trusted by our patients'}
+                        <div className="hero-overlay-card-text text-xs sm:text-sm leading-[1.4] text-white/85">
+                          {lang === 'geo' ? 'პაციენტთა 100% ნდობა და რეკომენდაცია.' : '100% patient satisfaction and trust.'}
                         </div>
                       </div>
                     </div>
-                    <div className="button-group mt-3.5">
+                    <div className="button-group mt-3 pt-2 border-t border-white/10">
                       <a
                         href="#reviews"
-                        className="button is-link is-icon is-alternate w-inline-block no-underline"
+                        className="button is-link is-icon is-alternate w-inline-block no-underline text-xs"
                         style={{ textDecoration: 'none' }}
                       >
-                        <div>{lang === 'geo' ? 'შეფასებები' : 'See Reviews'}</div>
+                        <div>{lang === 'geo' ? 'შეფასებები' : 'Reviews'}</div>
                         <div className="icon-embed-xxsmall w-embed ml-1">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -770,21 +771,62 @@ export default function App() {
         </header>
 
         {/* =========================================================================
-            3. SECTIONS BREAKDOWN:
-               - Welcome & Doctor section with HERO7 & Dr. Eka Bukhrashvili
-               - Interactive Reviews Horizontal Carousel (3 cards on desktop, 1 on mobile, Left/Right arrows)
-               - Services, Differentiators, Patient Education, Working Hours/Insurance, FAQ, CTA, Footer
+            SECTION 2: CLINIC PRINCIPLES & PHILOSOPHY (Professionalism, Experience, Technology)
+            Dark Aurora / Fluid Shadow, high-end scroll reveal
+           ========================================================================= */}
+        <PhilosophyTimeline lang={lang} />
+
+        {/* =========================================================================
+            SECTION 3: FOUNDER / ABOUT SECTION (Dr. Eka Bukhrashvili)
+            bg-gradient-to-b from-white to-slate-50, py-24 md:py-32, layered portrait
+           ========================================================================= */}
+        <FounderSection
+          lang={lang}
+          onBookClick={() => {
+            setSubmitted(false);
+            setModalStep(1);
+            setModalOpen(true);
+          }}
+        />
+
+        {/* =========================================================================
+            4. SECTIONS BREAKDOWN:
+               - Interactive Reviews Horizontal Carousel
+               - Clinical Services Section
+               - About Clinic Features (3D Tilt Cards)
+               - Modern Booking & Schedule Section
            ========================================================================= */}
         <div ref={restContainerRef}>
-          {/* Welcome & Highlights Section */}
-          <div dangerouslySetInnerHTML={{ __html: processedWelcomeHtml }} />
-
           {/* Reviews Carousel (Interactive horizontal slider) */}
           <ReviewsCarousel lang={lang} />
 
-          {/* Remaining Sections */}
-          <div dangerouslySetInnerHTML={{ __html: afterReviewsHtml }} />
+          {/* Projects / Case Studies (Services) Section */}
+          <ProjectsSection
+            lang={lang}
+            onBookClick={(serviceKey) => {
+              if (serviceKey) setModalService(serviceKey);
+              setSubmitted(false);
+              setModalStep(1);
+              setModalOpen(true);
+            }}
+          />
+
+          {/* About Clinic Features (3D Tilt Cards) */}
+          <div dangerouslySetInnerHTML={{ __html: aboutFeaturesHtml }} />
+
+          {/* Overhauled Modern Booking System Section with Condensed Working Hours & Insurance */}
+          <BookingSection lang={lang} />
         </div>
+
+        {/* New Premium Footer */}
+        <Footer
+          lang={lang}
+          onBookClick={() => {
+            setSubmitted(false);
+            setModalStep(1);
+            setModalOpen(true);
+          }}
+        />
       </main>
 
       {/* =========================================================================
